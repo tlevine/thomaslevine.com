@@ -235,7 +235,7 @@ body {
 .social a { color: inherit; text-decoration: none; }
 
 .name { font-weight: 700; }
-.js #chainsaw { visibility: hidden; }
+.js #e-post > span { visibility: hidden; }
 
 
 
