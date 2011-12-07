@@ -32,6 +32,11 @@
        Modernizr enables HTML5 elements & feature detects; Respond is a polyfill for min/max-width CSS3 Media Queries
        For optimal performance, use a custom Modernizr build: www.modernizr.com/download/ -->
   <script src="js/libs/modernizr-2.0.6.min.js"></script>
+
+  <!-- Web fonts -->
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+
+
 </head>
 
 <body>
@@ -41,10 +46,25 @@
 
     </header>
     <div id="main" role="main">
-       <div class="name">Thomas Levine</div>
-       <div class="email">esperluette at this domain</div>
-       <div class="phone">607 699 1866</div>
-<!--       <div class="logo">!</div> -->
+      <div class="words">
+         <div class="name">thomas levine</div>
+         <div class="chainsaw" id="e-post"><span id="chainsaw">esperluette at this domain</span></div>
+         <div class="phone">607 699 1866</div>
+         <nav class="social">
+           <ul>
+             <a href="http://facebook.com/perluette"><li>fb</li></a>
+             <a href="http://twitter.com/thomaslevine"><li>tw</li></a>
+             <a href="https://joindiaspora.com/u/tlevine"><li>d*</li></a>
+             <a href="http://identi.ca/tlevine"><li>sn</li></a>
+             <a href="http://www.linkedin.com/profile/view?id=13142929"><li>li</li></a>
+             <a href="https://scraperwiki.com/profiles/tlevine"><li>sw</li></a>
+             <a href="https://github.com/tlevine"><li>gh</li></a>
+             <a href="https://gitorious.org/tlevine"><li>gt</li></a>
+             <a href="http://stats.stackexchange.com/users/3874/thomas-levine"><li>cv</li></a>
+           </ul>
+         </nav>
+      </div>
+      <div class="logo"><img src="img/me-200.png" alt="A photo of Tom" /></div>
 <!--       <div class="photo"><img src="" alt="Tom balancing a laptop on his head"></div> -->
     </div>
     <footer>
@@ -55,10 +75,10 @@
 
   <!-- JavaScript at the bottom for fast page loading -->
 
-  <!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if offline -->
+  <!-- Grab Google CDN's jQuery, with a protocol relative URL; fall back to local if offline
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
   <script>window.jQuery || document.write('<script src="js/libs/jquery-1.6.2.min.js"><\/script>')</script>
-
+   -->
 
   <!-- scripts concatenated and minified via ant build script-->
   <script defer src="js/plugins.js"></script>
@@ -68,7 +88,7 @@
 	
   <!-- Change UA-XXXXX-X to be your site's ID -->
   <script>
-    window._gaq = [['_setAccount','UAXXXXXXXX1'],['_trackPageview'],['_trackPageLoadTime']];
+    window._gaq = [['_setAccount','UA-24156676-1'],['_trackPageview'],['_trackPageLoadTime']];
     Modernizr.load({
       load: ('https:' == location.protocol ? '//ssl' : '//www') + '.google-analytics.com/ga.js'
     });
