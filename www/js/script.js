@@ -1,6 +1,10 @@
 /* Author: Thomas Levine
 
 */
-var username='perluette'
-window.chainsaw=[username,'thomaslevine.com'].join('@');
-document.getElementById("e-post").innerHTML=chainsaw;
+$(function(){
+  _gaq.push(['_setCustomVar',1,'Generated email address',chainsaw]);
+  $('.social a').click(function(){
+    var thelink=$(this).attr('href');
+    _gaq.push(['_trackEvent', 'Social', 'Clickthrough',thelink]);
+  });
+});
