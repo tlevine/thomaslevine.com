@@ -1,3 +1,6 @@
+from settings_dev import *
+from settings_credentials import *
+
 import os.path
 
 PROJECT_ROOT = os.path.abspath(os.path.dirname(__file__))
@@ -76,7 +79,7 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.messages.middleware.MessageMiddleware',
 )
 
-ROOT_URLCONF = 'tl.urls'
+ROOT_URLCONF = 'api.urls'
 
 TEMPLATE_DIRS = (
   os.path.join(PROJECT_ROOT, "templates"),
@@ -102,7 +105,8 @@ INSTALLED_APPS = (
     'django.contrib.admin',
     'django.contrib.admindocs',
 
-    'annoying',
+#    'annoying',
+    'email_address',
 )
 
 # A sample logging configuration. The only tangible logging
@@ -128,5 +132,3 @@ LOGGING = {
     }
 }
 
-import settings_dev
-import settings_credentials
