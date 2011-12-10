@@ -12,4 +12,5 @@ $(function(){
     var theclass=$(this).attr('class');
     _gaq.push(['_trackEvent', 'Static', 'Click',theclass]);
   });
+  $('#card').css('visibility','inherit').hide().fadeIn('slow');
 });

@@ -216,18 +216,18 @@ body {
   color: #fe57a1;
   font-family: 'Open Sans', sans-serif;
 }
-#main {
-  width: 26em;
-  height: 10em;
+#card {
+  width: 400px;
+  height: 200px;
   background: #FFF;
   border-radius: 0px;
   padding: 2.5em 2.0em 0em 2.5em;
   margin: 100px auto;
   box-shadow: 0 0 2em #222;
 }
-#main > div { float: left; }
-#main > .logo { float: right; }
-#main > .logo > img { height: 100%; }
+#card > div { float: left; }
+#card > .logo { float: right; }
+#card > .logo > img { height: 100%; }
 .words {margin-top: 0.8em; }
 .social li { float: left; width: 1.65em; text-align: center; margin-right: 0.5em; background: #fe57a1; color: white; margin-top: 0.5em; padding: 0.1em;}
 .social {width: 12em; height: 4em; float: left; }
@@ -236,6 +236,7 @@ body {
 
 .name { font-weight: 700; }
 .js #e-post > span { visibility: hidden; }
+.js #card { visibility: hidden; }
 
 
 
