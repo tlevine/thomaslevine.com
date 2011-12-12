@@ -1,0 +1,10 @@
+## Blog
+
+    /posts/foo.markdown
+    /posts/foo/bar.baz
+
+The former should be processed. The latter should be copied.
+
+## API
+Set up a different email service so I can use my crazy
+random email addresses.
