@@ -18,8 +18,6 @@ This epitomizes my Tomness.
 
     Tom
 
-Attachment: [thomaslevine.pdf](thomaslevine.pdf)
-
     On 1/10/07, Ardevan <yaghoubi.a@gmail.com> wrote:
     ---------- Forwarded message ----------
     From: Ardevan < yaghoubi.a@gmail.com>
@@ -49,6 +47,8 @@ Attachment: [thomaslevine.pdf](thomaslevine.pdf)
     sheet.  Thanks!
 
     Katie and Ardevan
+
+Attachment: [thomaslevine.pdf](thomaslevine.pdf)
 
 
 (*Maroon* is my high school's official newspaper, and I got the position.)
