@@ -18,7 +18,7 @@ This epitomizes my Tomness.
 
     Tom
 
-Attachment: [thomaslevine.pdf](hs-newspaper-application/thomaslevine.pdf)
+Attachment: [thomaslevine.pdf](thomaslevine.pdf)
 
     On 1/10/07, Ardevan <yaghoubi.a@gmail.com> wrote:
     ---------- Forwarded message ----------

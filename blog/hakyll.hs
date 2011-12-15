@@ -25,13 +25,17 @@ main = hakyll $ do
         compile compressCssCompiler
 
     -- Render posts
-    match "posts/*" $ do
+    match "posts/**index.*" $ do
         route   $ setExtension ".html"
         compile $ (pageCompiler &&& (unsafeCompiler (\_ -> getCurrentTime)))
 	    >>> isPagePublishedYet
 	    >>> (id +++ (applyTemplateCompiler "templates/post.html"
                          >>> applyTemplateCompiler "templates/default.html"
                          >>> relativizeUrlsCompiler))
+    -- Copy post assets
+    match "p*/***.*" $ do
+        route   idRoute
+        compile copyFileCompiler
 
     -- Render posts list
     match "posts.html" $ route idRoute
