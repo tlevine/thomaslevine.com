@@ -71,9 +71,11 @@
       </div>
     </div>
 
-<!-- Protest SOPA -->
-<a style="width:25%;height:100px;vertical-align:middle;text-align:center;background-color:#000;position:absolute;z-index:5555;top:150px;left:40%;background-image:url(http://americancensorship.org/images/stop-censorship-small.png);background-position:center center;background-repeat:no-repeat;" href="http://americancensorship.org"></a>
-<!-- End protesting SOPA -->
+<!-- Protest SOPA non-scripts -->
+<style>.js #sopa {display: none;}</style>
+<a id="sopa" style="width:25%;height:100px;vertical-align:middle;text-align:center;background-color:#000;position:absolute;z-index:5555;top:150px;left:40%;background-image:url(http://americancensorship.org/images/stop-censorship-small.png);background-position:center center;background-repeat:no-repeat;" href="http://americancensorship.org"></a>
+<!-- End SOPA non-scripts -->
+
     <footer>
 
     </footer>
@@ -91,6 +93,15 @@
   <script defer src="js/script.js"></script>
   <!-- end scripts-->
 
+<!-- Protest SOPA scripts -->
+<script>
+$(function(){
+  setTimeout(function(){
+    $('#sopa').show();
+  },1000);
+});
+</script>
+<!-- End SOPA scripts -->
 	
   <!-- Change UA-XXXXX-X to be your site's ID -->
   <script>
