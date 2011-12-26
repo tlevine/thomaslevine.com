@@ -9,3 +9,6 @@ cd -
 cd www/build
 ant build
 cd -
+
+#Convert the RDF for the website
+rapper -i turtle -o ntriples www/index.ttl > publish/index.rdf
