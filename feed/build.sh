@@ -1,11 +1,11 @@
 #!/bin/bash
 FORMATS='ntriples atom rss-1.0 dot'
-PUBLISH_DIR=publish
+PUBLISH_DIR=../publish
 
 #List the files
-files=index.ttl
-files+=`ls -d posts/*` || sleep 0
-files+=`ls -d tags/*`  || sleep 0
+files=''
+files+=`ls -d posts/*.ttl` || sleep 0
+files+=`ls -d tags/*.ttl`  || sleep 0
 
 #Process the files
 for file in $files; do

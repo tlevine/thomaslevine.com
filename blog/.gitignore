@@ -1,7 +1,0 @@
-#Hakyll binary and build files
-hakyll
-hakyll.hi
-hakyll.o
-
-#Underscored directories
-_*
