@@ -263,7 +263,7 @@ p, h1, h2, h3, h4, h5 { margin: 0; padding: 0; }
   width: 200px;
   height: 350px;
   margin: 25px auto;
-  padding: 2.5em 2.5em 0em 2.5em;
+  padding: 25px 25px 0 25px;
 }
 #card { position: relative; }
 #card > .logo {
@@ -340,9 +340,8 @@ html.js #e-post > span { visibility: hidden; }
 
 @media only screen and (min-width: 540px) {
   #card {
-    width: 400px;
+    width: 375px;
     height: 200px;
-    padding: 2.5em 2.0em 0em 2.5em;
     margin: 100px auto;
   }
   .social {width: 12em; height: 4em; float: left; }
@@ -357,7 +356,10 @@ html.js #e-post > span { visibility: hidden; }
     text-align: left;
   }
   #card > div { float: left; }
-  #card > .logo { float: right; position: inherit; }
+  #card > .logo {
+    bottom: 0px;
+    right: 25px;
+  }
   #card > .logo > img { height: 100%; }
 }
 
