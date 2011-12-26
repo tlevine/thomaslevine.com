@@ -21,3 +21,6 @@ for file in $files; do
     rapper -i turtle -o $format $file > $PUBLISH_DIR/$filebase.$extension
   done
 done
+
+./buildindex.py posts
+./buildindex.py tags
