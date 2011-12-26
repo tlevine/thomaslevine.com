@@ -50,9 +50,9 @@ body, button, input, select, textarea { font-family: sans-serif; color: #222; }
    Links
    ========================================================================== */
 
-a { color: #00e; }
-a:visited { color: #551a8b; }
-a:hover { color: #06e; }
+a { color: inherit; text-decoration: inherit; }
+a:visited { color: inherit; }
+a:hover { color: #06e; text-decoration: underline; }
 a:focus { outline: thin dotted; }
 
 /* Improve readability when focused and hovered in all browsers: h5bp.com/h */
@@ -99,6 +99,15 @@ sub { bottom: -0.25em; }
    ========================================================================== */
 
 ul, ol { margin: 1em 0; padding: 0 0 0 40px; }
+ul.nobullet {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+ul.nobullet > li {
+  display: inline;
+}
+
 dd { margin: 0 0 0 40px; }
 nav ul, nav ol { list-style: none; list-style-image: none; margin: 0; padding: 0; }
 
@@ -219,6 +228,8 @@ body {
   height: 100%;
 }
 
+p, h1, h2, h3, h4, h5 { margin: 0; padding: 0; }
+
 /* Things that look like cards */
 .card{
   background: #FFF;
@@ -226,16 +237,17 @@ body {
   box-shadow: 0 0 2em #222;
 }
 
-/* Cards for feeds */
-.feed{
+/* Cards for smallcards */
+.smallcard{
   width: 100px;
   height: 100px;
-  margin: 50px;
   float: left;
+  margin: 25px;
+  padding: 25px;
 }
 
 /* Feed card container */
-#feeds {
+#smallcards {
   width: 100%;
   max-width: 200px;
   margin: 25px auto;
@@ -260,7 +272,6 @@ body {
 .social li { float: left; width: 1.65em; text-align: center; margin-right: 0.5em; background: #fe57a1; color: white; margin-top: 0.5em; padding: 0.1em;}
 .social {width: 12em; height: 4em; float: left; }
 .social li:hover {background: #444; color: #fe57a1; }
-.social a { color: inherit; text-decoration: none; }
 
 .name { font-weight: 700; }
 html.js.not-ie #card { visibility: hidden; }
@@ -314,14 +325,13 @@ html.js #e-post > span { visibility: hidden; }
     width: 400px;
     height: 200px;
     padding: 2.5em 2.0em 0em 2.5em;
+    margin: 100px auto;
   }
-  #feeds{
-    max-width: 375px;
-  }
-  .feed{
-    width: 75px;
-    height: 75px;
-    margin: 25px;
+  #smallcards{
+    margin: 100px auto;
+/*
+    max-width: 400px;
+*/
   }
   #card > div { float: left; }
   #card > .logo { float: right; position: inherit; }
