@@ -1,8 +1,7 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix tag: <http://thomaslevine.com/tags/> .
-@prefix post: <http://thomaslevine.com/posts/> .
+@prefix post: <http://thomaslevine.com/terms/post/> .
 
-post: post: [
+<> post: [
   a rdf:Seq;
   rdf:_1 post:bettercoach;
 ] .

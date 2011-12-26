@@ -1,0 +1,9 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix terms: <http://thomaslevine.com/terms/> .
+@prefix directory: <http://thomaslevine.com/> .
+
+<> terms:directory [
+  a rdf:Bag;
+  rdf:_1 directory:posts;
+  rdf:_2 directory:tags;
+] .
