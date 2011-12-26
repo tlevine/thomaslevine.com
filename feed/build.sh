@@ -1,5 +1,5 @@
 #!/bin/bash
-FORMATS='atom rss-1.0'
+FORMATS='atom rss-1.0 rdfxml'
 INTERMEDIATE_DIR=../intermediate
 PUBLISH_DIR=../publish
 
@@ -14,15 +14,18 @@ done
 
 #Leaf rdfs
 for file in "`ls -d {tags,posts}/*/index.ttl`"; do
-  cat templates/header.ttl > $INTERMEDIATE_DIR/$file
-  cat $file >> $INTERMEDIATE_DIR/$file
-  rapper -i turtle -o rdfxml $INTERMEDIATE_DIR/$file > $PUBLISH_DIR/$file
+  filebase="`echo $file|sed 's/\.ttl$//'`"
+  cp templates/header.ttl $INTERMEDIATE_DIR/$filebase.ttl
+  cat $file >> $INTERMEDIATE_DIR/$filebase.ttl
+  rapper -i turtle -o rdfxml $INTERMEDIATE_DIR/$filebase.ttl > $PUBLISH_DIR/$filebase.rdf
 done
 
-#Process the files
+#Process the syndication feed files
 for format in $FORMATS; do
   if [[ $format = rss-1.0 ]];
     then extension=rss
+  elif [[ $format = rdfxml ]];
+    then extension=rdf
   else
     extension=$format
   fi
