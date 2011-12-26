@@ -1,5 +1,0 @@
-directory: term:directory [
-  a rdf:Bag;
-  rdf:_1 directory:posts;
-  rdf:_2 directory:tags;
-] .
