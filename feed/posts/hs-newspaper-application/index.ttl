@@ -1,9 +1,16 @@
-post:bettercoach tag: [
-  a rdf:Bag;
-  rdf:_1 tag:high-school;
-] .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix post: <http://thomaslevine.com/posts/> .
+@prefix tag: <http://thomaslevine.com/tags/> .
+@prefix tom: <http://thomaslevine.com/terms#> .
 
-post:bettercoach term:post-body """
+post:maroon-application
+  tom:date "2011-12-26" ;
+  tom:title "High school newspaper application" ;
+  tag: [
+    a rdf:Bag;
+    rdf:_1 tag:high-school;
+  ] ;
+  tom:body """
 ---
 title: Application to my high school newspaper staff
 date: January 1, 2013

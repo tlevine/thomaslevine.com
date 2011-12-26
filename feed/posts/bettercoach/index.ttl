@@ -1,10 +1,17 @@
-post:bettercoach tag: [
-  a rdf:Bag;
-  rdf:_1 tag:ux;
-  rdf:_2 tag:scraping;
-] .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix post: <http://thomaslevine.com/posts/> .
+@prefix tag: <http://thomaslevine.com/tags/> .
+@prefix tom: <http://thomaslevine.com/terms#> .
 
-post:bettercoach term:body """
+post:bettercoach
+  tom:date "2011-12-26" ;
+  tom:title "Gifts my true love gave to me on all twelve days of Christmas" ;
+  tag: [
+    a rdf:Bag;
+    rdf:_1 tag:ux;
+    rdf:_2 tag:scraping;
+  ] ;
+  tom:body """
 The [Coach](http://coachusa.com) [bus](http://coachcanada.ca)
 [schedule-finder](http://shortlinebus.com) is hard-to-use,
 so I made a [better one](http://bettercoa.ch).

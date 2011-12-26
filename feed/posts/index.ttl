@@ -1,10 +1,29 @@
-directory:posts
-  term:post [
-    a rdf:Seq;
-    rdf:_1 post:bettercoach;
-  ] .
-  rss:description "Thomas Levine" ;
-  rss:link directory:posts.rss ;
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+
+@prefix rss091: <http://purl.org/rss/1.0/modules/rss091#> .
+@prefix rss: <http://purl.org/rss/1.0/> .
+@prefix dc: <http://purl.org/dc/elements/1.1/> .
+@prefix content: <http://purl.org/rss/1.0/modules/content/> .
+@prefix atom: <http://www.w3.org/2005/Atom> .
+
+@prefix post: <http://thomaslevine.com/posts/> .
+@prefix tag: <http://thomaslevine.com/tags/> .
+
+post:
   content:encoded "Thomas Levine" ;
+  rss:description "Thomas Levine" ;
+  rss:link post: ;
   rss:title "Thomas Levine" ;
   a rss:channel ;
+
+  rss:items [
+    a rdf:Seq
+    ##post_sequence##
+  ] ;
+  rss:oeu """
+oeuaoeu
+""" .
+#  tom:post [
+#    a rdf:Seq;
+#    ##post_sequence##
+#  ] ;
