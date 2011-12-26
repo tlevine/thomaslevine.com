@@ -235,9 +235,10 @@ p, h1, h2, h3, h4, h5 { margin: 0; padding: 0; }
   background: #FFF;
   border-radius: 0px;
   box-shadow: 0 0 2em #222;
+  text-align: center;
 }
 
-/* Cards for smallcards */
+/* Small cards */
 .smallcard{
   width: 100px;
   height: 100px;
@@ -269,9 +270,22 @@ p, h1, h2, h3, h4, h5 { margin: 0; padding: 0; }
   width: 100%;
 }
 .words {margin-top: 0.8em; }
-.pinksquare li { float: left; width: 1.65em; text-align: center; margin-right: 0.5em; background: #fe57a1; color: white; margin-top: 0.5em; padding: 0.1em;}
-.pinksquare {width: 12em; height: 4em; float: left; }
-.pinksquare li:hover {background: #444; color: #fe57a1; }
+.social {
+  width: 7em;
+  margin: 0 auto;
+}
+.social li {
+  display: inline-block;
+  width: 1.65em;
+  height: 1.65em;
+  vertical-align: baseline;
+  text-align: center;
+  background: #fe57a1;
+  color: white;
+  margin: 0.25em;
+  padding: 0.1em;
+}
+.social li:hover {background: #444; color: #fe57a1; }
 
 .name { font-weight: 700; }
 html.js.not-ie .card { visibility: hidden; }
@@ -327,11 +341,16 @@ html.js #e-post > span { visibility: hidden; }
     padding: 2.5em 2.0em 0em 2.5em;
     margin: 100px auto;
   }
+  .social {width: 12em; height: 4em; float: left; }
+  .social li { margin-left: 0; }
   #smallcards{
     margin: 100px auto;
 /*
     max-width: 400px;
 */
+  }
+  .card {
+    text-align: left;
   }
   #card > div { float: left; }
   #card > .logo { float: right; position: inherit; }
