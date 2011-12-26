@@ -344,7 +344,7 @@ html.js #e-post > span { visibility: hidden; }
     height: 200px;
     margin: 100px auto;
   }
-  .social {width: 12em; height: 4em; float: left; }
+  .social {width: 10em; height: 4em; float: left; }
   .social li { margin-left: 0; }
   #smallcards{
     margin: 100px auto;
