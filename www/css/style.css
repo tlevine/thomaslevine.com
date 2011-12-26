@@ -105,7 +105,7 @@ ul.nobullet {
   list-style-type: none;
 }
 ul.nobullet > li {
-  display: inline;
+/*  display: inline; */
 }
 
 dd { margin: 0 0 0 40px; }
