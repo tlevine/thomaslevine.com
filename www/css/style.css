@@ -215,15 +215,38 @@ body {
   background: #444; 
   color: #fe57a1;
   font-family: 'Open Sans', sans-serif;
+  width: 100%;
+  height: 100%;
 }
-#card {
-  width: 200px;
-  height: 400px;
+
+/* Things that look like cards */
+.card{
   background: #FFF;
   border-radius: 0px;
-  margin: 100px auto;
-  padding: 2.5em 2.5em 0em 2.5em;
   box-shadow: 0 0 2em #222;
+}
+
+/* Cards for feeds */
+.feed{
+  width: 100px;
+  height: 100px;
+  margin: 50px;
+  float: left;
+}
+
+/* Feed card container */
+#feeds {
+  width: 100%;
+  max-width: 200px;
+  margin: 25px auto;
+}
+
+/* The calling card */
+#card {
+  width: 200px;
+  height: 350px;
+  margin: 25px auto;
+  padding: 2.5em 2.5em 0em 2.5em;
 }
 #card { position: relative; }
 #card > .logo {
@@ -286,11 +309,19 @@ html.js #e-post > span { visibility: hidden; }
    Modify as content requires.
    ========================================================================== */
 
-@media only screen and (min-width: 480px) {
+@media only screen and (min-width: 540px) {
   #card {
     width: 400px;
     height: 200px;
     padding: 2.5em 2.0em 0em 2.5em;
+  }
+  #feeds{
+    max-width: 375px;
+  }
+  .feed{
+    width: 75px;
+    height: 75px;
+    margin: 25px;
   }
   #card > div { float: left; }
   #card > .logo { float: right; position: inherit; }
