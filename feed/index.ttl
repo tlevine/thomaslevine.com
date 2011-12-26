@@ -40,13 +40,13 @@ tag:scraping         rdfs:subClassOf   tag:data-science .
 ## Post contents     ##
 ## ----------------- ##
 post:bettercoach
-  a tag:ux .
-  a tag:scraping .
+  a tag:ux ;
+  a tag:scraping ;
   dc:link post:bettercoach;
   dc:date "2011-01-04T07:33:00Z" ;
   dc:title "BetterCoach" .
 
 post:maroon-application
-  a tag:high-school .
+  a tag:high-school ;
   dc:date "2011-01-04T07:33:00Z" ;
   dc:title "High school newspaper application" .
