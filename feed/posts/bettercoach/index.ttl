@@ -1,7 +1,8 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix tag: <http://thomaslevine.com/tags/> .
+
+@prefix term: <http://thomaslevine.com/terms/> .
 @prefix post: <http://thomaslevine.com/posts/> .
-@prefix body: <http://thomaslevine.com/posts#body> .
+@prefix tag: <http://thomaslevine.com/tags/> .
 
 post:bettercoach tag: [
   a rdf:Bag;
@@ -9,7 +10,7 @@ post:bettercoach tag: [
   rdf:_2 tag:scraping;
 ] .
 
-post:bettercoach body: """
+post:bettercoach term:body """
 The [Coach](http://coachusa.com) [bus](http://coachcanada.ca)
 [schedule-finder](http://shortlinebus.com) is hard-to-use,
 so I made a [better one](http://bettercoa.ch).
