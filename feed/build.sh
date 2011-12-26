@@ -1,5 +1,5 @@
 #!/bin/bash
-FORMATS='ntriples atom rss-1.0 dot'
+FORMATS='ntriples rdfxml atom rss-1.0 dot'
 PUBLISH_DIR=../publish
 
 #List the files
@@ -13,6 +13,8 @@ for file in $files; do
     if [[ $format = rss-1.0 ]];
       then extension=rss
     elif [[ $format = ntriples ]];
+      then extension=nt
+    elif [[ $format = rdfxml ]];
       then extension=rdf
     else
       extension=$format
