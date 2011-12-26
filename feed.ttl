@@ -43,7 +43,7 @@ tom:posts toms:posts [
 post:bettercoach
   dc:link post:bettercoach;
   dc:date "2011-01-04T07:33:00Z" ;
-  dc:title "High school newspaper application" ;
+  dc:title "BetterCoach" ;
   tom:tags [
     a rdf:Bag;
     rdf:_1 tag:ux;
@@ -116,16 +116,11 @@ They could have done without Javascript by adding appropriate buttons.
 post:maroon-application
   dc:date "2011-01-04T07:33:00Z" ;
   dc:title "High school newspaper application" ;
-  tom:tags [
+  toms:tags [
     a rdf:Bag;
     rdf:_1 tag:high-school;
   ] ;
   dc:description """
----
-title: Application to my high school newspaper staff
-date: January 1, 2013
-published: 2011-01-01 00:00
----
 This epitomizes my Tomness.
 
     ---------- Forwarded message ----------
