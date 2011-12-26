@@ -25,8 +25,11 @@ function feedtriple() {
   's/\([^ ]*\) \('$sourcetriple'\) \(.*\)$/\1 \2 \3\n\1 '$newtriple' \3/'
 }
 sed \
-  -e "`feedtriple <http://thomaslevine.com/terms#title> <http://purl.org/rss/1.0/title>`"
-  -e "`feedtriple <http://thomaslevine.com/terms#title> <http://purl.org/rss/1.0/title>`"
+  #Title
+  -e "`feedtriple <http://thomaslevine.com/terms#title> <http://purl.org/rss/1.0/title>`" \
+  #Date. This won't work; date format actually has to change.
+  -e "`feedtriple <http://thomaslevine.com/terms#date> <http://purl.org/dc/elements/1.1/date>`" \
+  -e "`feedtriple <http://thomaslevine.com/terms#date> <http://purl.org/rss/1.0/modules/rss091#pubDate>`" \
 
 #Convert to the three output formats
 #RSS and Atom are aggregated, so they use the intermediate directory.
