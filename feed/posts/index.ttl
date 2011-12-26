@@ -6,24 +6,27 @@
 @prefix content: <http://purl.org/rss/1.0/modules/content/> .
 @prefix atom: <http://www.w3.org/2005/Atom> .
 
+@prefix tom: <http://thomaslevine.com/terms#> .
 @prefix post: <http://thomaslevine.com/posts/> .
 @prefix tag: <http://thomaslevine.com/tags/> .
 
 post:
+  tom:title "Posts" ;
+  tom:body "Read." ;
+  tom:post [
+    a rdf:Seq;
+    ##begin post_sequence##
+    rdf:post_bettercoach post:bettercoach;
+    rdf:post_maroon-application post:maroon-application;
+    ##end post_sequence##
+  ] ;
+
   content:encoded "Thomas Levine" ;
   rss:description "Thomas Levine" ;
   rss:link post: ;
   rss:title "Thomas Levine" ;
-  a rss:channel ;
-
   rss:items [
-    a rdf:Seq
-    ##post_sequence##
+    ##begin post_sequence##
+    ##end post_sequence##
   ] ;
-  rss:oeu """
-oeuaoeu
-""" .
-#  tom:post [
-#    a rdf:Seq;
-#    ##post_sequence##
-#  ] ;
+  a rss:channel .
