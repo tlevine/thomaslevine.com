@@ -1,34 +1,32 @@
 #!/bin/bash
-FORMATS='ntriples rdfxml atom rss-1.0 dot'
+FORMATS='atom rss-1.0'
+INTERMEDIATE_DIR=../intermediate
 PUBLISH_DIR=../publish
 
-#List the files
-files="index.ttl posts/index.ttl tags/index.ttl"
-files+=" `ls -d posts/*/index.ttl`" || sleep 0
-files+=" `ls -d tags/*/index.ttl`"  || sleep 0
-
-mkdir $PUBLISH_DIR/posts $PUBLISH_DIR/tags
-
-#Process the files
-for file in $files; do
-  filebase="`echo $file| sed s/\.ttl$//`"
-  dir="`echo $file| sed s/index\.ttl$//`"
-  mkdir $PUBLISH_DIR/$dir
-
-  for format in $FORMATS; do
-    echo $file $format ----------------------
-    if [[ $format = rss-1.0 ]];
-      then extension=rss
-    elif [[ $format = ntriples ]];
-      then extension=nt
-    elif [[ $format = rdfxml ]];
-      then extension=rdf
-    else
-      extension=$format
-    fi
-    rapper -i turtle -o $format $file > $PUBLISH_DIR/$filebase.$extension
+#Concatenate the files
+for dir in $INTERMEDIATE_DIR $PUBLISH_DIR; do 
+  mkdir $dir/posts $dir/tags
+  for subdir in . posts tags; do
+    cp $subdir/index.ttl $dir/$subdir/index.ttl
+    cat $subdir/*/index.ttl >> $dir/$subdir/index.ttl
   done
 done
 
-#./buildindex.py posts
-#./buildindex.py tags
+#Leaf rdfs
+for file in "`ls -d {tags,posts}/*/index.ttl`"; do
+  cat templates/header.ttl > $INTERMEDIATE_DIR/$file
+  cat $file >> $INTERMEDIATE_DIR/$file
+  rapper -i turtle -o rdfxml $INTERMEDIATE_DIR/$file > $PUBLISH_DIR/$file
+done
+
+#Process the files
+for format in $FORMATS; do
+  if [[ $format = rss-1.0 ]];
+    then extension=rss
+  else
+    extension=$format
+  fi
+  rapper -i turtle -o $format $INTERMEDIATE_DIR/tags/index.ttl > $PUBLISH_DIR/tags/index.$extension
+  rapper -i turtle -o $format $INTERMEDIATE_DIR/posts/index.ttl > $PUBLISH_DIR/posts/index.$extension
+  cp $PUBLISH_DIR/posts/index.$extension $PUBLISH_DIR/feed.$extension
+done
