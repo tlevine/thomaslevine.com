@@ -217,17 +217,22 @@ body {
   font-family: 'Open Sans', sans-serif;
 }
 #card {
-  width: 400px;
-  height: 200px;
+  width: 200px;
+  height: 400px;
   background: #FFF;
   border-radius: 0px;
-  padding: 2.5em 2.0em 0em 2.5em;
   margin: 100px auto;
+  padding: 2.5em 2.5em 0em 2.5em;
   box-shadow: 0 0 2em #222;
 }
-#card > div { float: left; }
-#card > .logo { float: right; }
-#card > .logo > img { height: 100%; }
+#card { position: relative; }
+#card > .logo {
+  position: absolute;
+  bottom: 0px;
+}
+#card > .logo > img {
+  width: 100%;
+}
 .words {margin-top: 0.8em; }
 .social li { float: left; width: 1.65em; text-align: center; margin-right: 0.5em; background: #fe57a1; color: white; margin-top: 0.5em; padding: 0.1em;}
 .social {width: 12em; height: 4em; float: left; }
@@ -235,8 +240,8 @@ body {
 .social a { color: inherit; text-decoration: none; }
 
 .name { font-weight: 700; }
-.js #e-post > span { visibility: hidden; }
-.js #card { visibility: hidden; }
+html.js.not-ie #card { visibility: hidden; }
+html.js #e-post > span { visibility: hidden; }
 
 
 
@@ -282,16 +287,15 @@ body {
    ========================================================================== */
 
 @media only screen and (min-width: 480px) {
-  /* Style adjustments for viewports 480px and over go here */
-
+  #card {
+    width: 400px;
+    height: 200px;
+    padding: 2.5em 2.0em 0em 2.5em;
+  }
+  #card > div { float: left; }
+  #card > .logo { float: right; position: inherit; }
+  #card > .logo > img { height: 100%; }
 }
-
-@media only screen and (min-width: 768px) {
-  /* Style adjustments for viewports 768px and over go here */
-
-}
-
-
 
 /* ==|== print styles =======================================================
    Print styles.
