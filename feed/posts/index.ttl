@@ -1,28 +1,8 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix rss091: <http://purl.org/rss/1.0/modules/rss091#> .
-@prefix rss: <http://purl.org/rss/1.0/> .
-@prefix dc: <http://purl.org/dc/elements/1.1/> .
-@prefix content: <http://purl.org/rss/1.0/modules/content/> .
-@prefix atom: <http://www.w3.org/2005/Atom> .
-@prefix : <http://thomaslevine.com/posts/> .
+@prefix tag: <http://thomaslevine.com/tags/> .
+@prefix post: <http://thomaslevine.com/posts/> .
 
-:
-    rss:description "Tom's posts" ;
-    rss:items [
-        rdf:_1 <http://tlevine.tumblr.com/post/6873804418> ;
-        rdf:_2 <http://tlevine.tumblr.com/post/3591918918> ;
-        rdf:_3 <http://tlevine.tumblr.com/post/2607261072> ;
-        rdf:_4 <http://tlevine.tumblr.com/post/2593137854> ;
-        rdf:_5 <http://tlevine.tumblr.com/post/2593130505> ;
-        rdf:_6 <http://tlevine.tumblr.com/post/2607278187> ;
-        a rdf:Seq
-    ] ;
-    rss:link "http://tlevine.tumblr.com/" ;
-    content:encoded "I sometimes make frivolous information graphics and post them here. I use R almost exclusively." ;
-    rss:title "Quantitative Doodles" ;
-    a rss:channel ;
-    atom:link [
-        a atom:Link ;
-        atom:href <http://tumblr.superfeedr.com/> ;
-        atom:rel "hub"
-    ] .
+post: post: [
+  a rdf:Seq;
+  rdf:_1 post:bettercoach;
+] .

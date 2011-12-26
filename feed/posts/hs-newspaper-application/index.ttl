@@ -1,3 +1,14 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix tag: <http://thomaslevine.com/tags/> .
+@prefix post: <http://thomaslevine.com/posts/> .
+@prefix body: <http://thomaslevine.com/posts#body> .
+
+post:bettercoach tag: [
+  a rdf:Bag;
+  rdf:_1 tag:high-school;
+] .
+
+post:bettercoach body: """
 ---
 title: Application to my high school newspaper staff
 date: January 1, 2013
@@ -52,3 +63,4 @@ Attachment: [thomaslevine.pdf](thomaslevine.pdf)
 
 
 (*Maroon* is my high school's official newspaper, and I got the position.)
+""" .
