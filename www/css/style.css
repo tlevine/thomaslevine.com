@@ -52,7 +52,7 @@ body, button, input, select, textarea { font-family: sans-serif; color: #222; }
 
 a { color: inherit; text-decoration: inherit; }
 a:visited { color: inherit; }
-a:hover { color: #06e; text-decoration: underline; }
+a:hover { color: #000; text-decoration: inherit; }
 a:focus { outline: thin dotted; }
 
 /* Improve readability when focused and hovered in all browsers: h5bp.com/h */
