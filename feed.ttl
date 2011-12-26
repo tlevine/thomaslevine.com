@@ -1,36 +1,39 @@
-## ----------------- ##
-## Begin boilerplate ##
-## ----------------- ##
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-
-@prefix rss091: <http://purl.org/rss/1.0/modules/rss091#> .
-@prefix rss: <http://purl.org/rss/1.0/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
-@prefix content: <http://purl.org/rss/1.0/modules/content/> .
-@prefix atom: <http://www.w3.org/2005/Atom> .
 
-@prefix tag: <http://thomaslevine.com/tags.rdf#> .
-@prefix post: <http://thomaslevine.com/feed.rdf#> .
-@prefix tags: <http://thomaslevine.com/tags.rdf#_tagbag> .
+@prefix tom: <http://thomaslevine.com/> .
+@prefix toms: <http://thomaslevine.com/terms#> .
+@prefix tag: <http://thomaslevine.com/tags/> .
+@prefix post: <http://thomaslevine.com/posts/> .
 
-post:
-  rss:title "Tom's feed" ;
-  content:encoded "Read." ;
-  rss:link post: ;
-  rss:description "Thomas Levine" ;
-  a rss:channel .
 ## ----------------- ##
-## End boilerplate   ##
+## Hierarchical tags ##
 ## ----------------- ##
+toms:tag    rdf:type          rdfs:Class .
+
+tag:ux     rdf:type          rdfs:Class .
+tag:ux     rdfs:subClassOf   toms:tag    .
+
+tag:data-science     rdf:type          rdfs:Class .
+tag:data-science     rdfs:subClassOf   toms:tag .
+tag:scraping         rdfs:subClassOf   tag:data-science .
+
+## ----------------- ##
+## Feed properties   ##
+## ----------------- ##
+tom:feed
+  dc:title "Tom's feed" ;
+  dc:creator "Thomas Levine" ;
+  dc:date "2011-12-26" ;
+  dc:description "Thomas Levine" .
 
 ## ----------------- ##
 ## List of posts     ##
 ## ----------------- ##
-post: rss:items [
-  ##begin post_sequence##
+tom:posts toms:posts [
   rdf:_1 post:bettercoach ;
   rdf:_2 post:maroon-application ;
-  ##end post_sequence##
   a rdf:Seq ;
 ] .
 
@@ -38,16 +41,15 @@ post: rss:items [
 ## Post contents     ##
 ## ----------------- ##
 post:bettercoach
-  a rss:item ;
-  rss:link post:bettercoach;
+  dc:link post:bettercoach;
   dc:date "2011-01-04T07:33:00Z" ;
-  rss:title "High school newspaper application" ;
-  tags: [
+  dc:title "High school newspaper application" ;
+  tom:tags [
     a rdf:Bag;
     rdf:_1 tag:ux;
     rdf:_2 tag:scraping;
   ] ;
-  content:encoded """
+  dc:description """
 The [Coach](http://coachusa.com) [bus](http://coachcanada.ca)
 [schedule-finder](http://shortlinebus.com) is hard-to-use,
 so I made a [better one](http://bettercoa.ch).
@@ -112,14 +114,13 @@ They could have done without Javascript by adding appropriate buttons.
 """ .
 
 post:maroon-application
-  a rss:item ;
   dc:date "2011-01-04T07:33:00Z" ;
-  rss:title "High school newspaper application" ;
-  tags: [
+  dc:title "High school newspaper application" ;
+  tom:tags [
     a rdf:Bag;
     rdf:_1 tag:high-school;
   ] ;
-  content:encoded """
+  dc:description """
 ---
 title: Application to my high school newspaper staff
 date: January 1, 2013
