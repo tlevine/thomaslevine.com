@@ -1,4 +1,10 @@
-<> term:post [
-  a rdf:Seq;
-  rdf:_1 post:bettercoach;
-] .
+directory:posts
+  term:post [
+    a rdf:Seq;
+    rdf:_1 post:bettercoach;
+  ] .
+  rss:description "Thomas Levine" ;
+  rss:link directory:posts.rss ;
+  content:encoded "Thomas Levine" ;
+  rss:title "Thomas Levine" ;
+  a rss:channel ;
