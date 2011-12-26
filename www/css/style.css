@@ -269,9 +269,9 @@ p, h1, h2, h3, h4, h5 { margin: 0; padding: 0; }
   width: 100%;
 }
 .words {margin-top: 0.8em; }
-.social li { float: left; width: 1.65em; text-align: center; margin-right: 0.5em; background: #fe57a1; color: white; margin-top: 0.5em; padding: 0.1em;}
-.social {width: 12em; height: 4em; float: left; }
-.social li:hover {background: #444; color: #fe57a1; }
+.pinksquare li { float: left; width: 1.65em; text-align: center; margin-right: 0.5em; background: #fe57a1; color: white; margin-top: 0.5em; padding: 0.1em;}
+.pinksquare {width: 12em; height: 4em; float: left; }
+.pinksquare li:hover {background: #444; color: #fe57a1; }
 
 .name { font-weight: 700; }
 html.js.not-ie .card { visibility: hidden; }
