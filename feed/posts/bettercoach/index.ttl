@@ -1,11 +1,9 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
-@prefix rss091: <http://purl.org/rss/1.0/modules/rss091#> .
-@prefix rss: <http://purl.org/rss/1.0/> .
-@prefix dc: <http://purl.org/dc/elements/1.1/> .
-@prefix content: <http://purl.org/rss/1.0/modules/content/> .
-@prefix atom: <http://www.w3.org/2005/Atom> .
-
 @prefix tag: <http://thomaslevine.com/tags/> .
 @prefix post: <http://thomaslevine.com/posts/> .
 
-post:bettercoach tag: tag:ux .
+post:bettercoach tag: [
+        a rdf:Bag;
+        rdf:_1 tag:ux;
+        rdf:_2 tag:scraping;
+    ].
