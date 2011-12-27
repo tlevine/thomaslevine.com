@@ -2,6 +2,8 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix dc: <http://purl.org/dc/elements/1.1/> .
 
+@prefix rss: <http://purl.org/rss/1.0/> .
+
 @prefix tom: <http://thomaslevine.com/terms#> .
 @prefix tag: <http://thomaslevine.com/tags/> .
 @prefix post: <http://thomaslevine.com/feed/> .
@@ -25,16 +27,13 @@ tag:scraping         rdfs:subClassOf   tag:data-science .
   dc:title "Tom's feed" ;
   dc:creator "Thomas Levine" ;
   dc:date "2011-12-26" ;
-  dc:description "Thomas Levine" .
-
-## ----------------- ##
-## List of posts     ##
-## ----------------- ##
-<> tom:posts [
-  rdf:_1 post:bettercoach ;
-  rdf:_2 post:maroon-application ;
-  a rdf:Seq ;
-] .
+  dc:description "Thomas Levine" ;
+  rss:items [
+    a rss:channel ;
+    rdf:_1 post:bettercoach ;
+    rdf:_2 post:maroon-application ;
+    a rdf:Seq ;
+  ] .
 
 ## ----------------- ##
 ## Post contents     ##
