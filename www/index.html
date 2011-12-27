@@ -96,6 +96,11 @@
           </div>
           <div id="tips" class="card smallcard">
             <h3>tips</h3>
+            <ul class="nobullet">
+              <li><a href="#" onclick="tip('penny')">penny</a></li>
+              <li><a href="#" onclick="tip('nickel')">nickel</a></li>
+              <li><a href="#" onclick="tip('dime')">dime</a></li>
+            </ul>
           </div>
 <!--
           <div id="semantic" class="card smallcard">
@@ -112,7 +117,7 @@
     </div>
 
 <!-- Protest SOPA non-scripts -->
-<style>.js #sopa {display: none;}</style>
+<!-- <style>.js #sopa {display: none;}</style> -->
 <a id="sopa" style="width:50%;min-width:240px;height:100px;vertical-align:middle;text-align:center;background-color:#000;position:absolute;z-index:5555;top:150px;left:30%;background-image:url(http://americancensorship.org/images/stop-censorship-small.png);background-position:center center;background-repeat:no-repeat;" href="http://americancensorship.org"></a>
 <!-- End SOPA non-scripts -->
 
@@ -128,21 +133,26 @@
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
   <script>window.jQuery || document.write('<script src="js/libs/jquery-1.6.2.min.js"><\/script>')</script>
 
+  <!-- Google In-App Payments -->
+  <!-- <script type="text/javascript" src="http://www.google.com/jsapi"></script> -->
+  <!-- End Google In-App Payments -->
+	
   <!-- scripts concatenated and minified via ant build script-->
   <script defer src="js/plugins.js"></script>
   <script defer src="js/script.js"></script>
+  <!-- <script defer src="js/tips.js"></script> -->
   <!-- end scripts-->
 
 <!-- Protest SOPA scripts -->
 <script>
 $(function(){
   setTimeout(function(){
-//    $('#sopa').show();
+    $('#sopa').show();
   },3000);
 });
 </script>
 <!-- End SOPA scripts -->
-	
+
   <!-- Prompt IE 6 users to install Chrome Frame. Remove this if you want to support IE 6.
        chromium.org/developers/how-tos/chrome-frame-getting-started -->
   <!--[if lt IE 7 ]>
