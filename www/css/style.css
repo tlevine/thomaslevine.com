@@ -240,17 +240,17 @@ p, h1, h2, h3, h4, h5 { margin: 0; padding: 0; }
 
 /* Small cards */
 .smallcard{
-  width: 100px;
-  height: 100px;
+  width: 95px;
+  height: 95px;
   float: left;
   margin: 25px;
-  padding: 25px;
+  padding: 15px;
 }
 
 /* Feed card container */
 #smallcards {
   width: 100%;
-  max-width: 200px;
+  max-width: 175px;
   margin: 25px auto;
 }
 
@@ -340,17 +340,19 @@ html.js #e-post > span { visibility: hidden; }
 
 @media only screen and (min-width: 540px) {
   #card {
-    width: 375px;
-    height: 200px;
+    width: 425px;
+    height: 225px;
     margin: 100px auto;
   }
   .social {width: 10em; height: 4em; float: left; }
   .social li { margin-left: 0; }
   #smallcards{
     margin: 100px auto;
-/*
-    max-width: 400px;
-*/
+    max-width: 525px;
+  }
+  .smallcard{
+    width: 95px;
+    height: 95px;
   }
   .card {
     text-align: left;
@@ -360,7 +362,7 @@ html.js #e-post > span { visibility: hidden; }
     bottom: 0px;
     right: 25px;
   }
-  #card > .logo > img { height: 100%; }
+/*  #card > .logo > img { height: 100%; } */
 }
 
 /* ==|== print styles =======================================================
