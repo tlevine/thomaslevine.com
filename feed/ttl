@@ -19,6 +19,8 @@ tag:ux     rdfs:subClassOf   tom:tag    .
 tag:data-science     rdf:type          rdfs:Class .
 tag:data-science     rdfs:subClassOf   tom:tag .
 tag:scraping         rdfs:subClassOf   tag:data-science .
+tag:R                rdfs:subClassOf   tag:data-science .
+tag:statistics       rdfs:subClassOf   tag:data-science .
 
 ## ----------------- ##
 ## Feed properties   ##
@@ -41,7 +43,6 @@ tag:scraping         rdfs:subClassOf   tag:data-science .
 post:bettercoach
   a tag:ux ;
   a tag:scraping ;
-  dc:link post:bettercoach;
   dc:date "2011-01-04T07:33:00Z" ;
   dc:title "BetterCoach" .
 
