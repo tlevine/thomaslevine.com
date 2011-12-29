@@ -292,8 +292,8 @@ p, h1, h2, h3, h4, h5 { margin: 0; padding: 0; }
 .social li:hover {background: #444; color: #fe57a1; }
 
 .name { font-weight: 700; }
-html.js.not-ie .card { visibility: hidden; }
-html.js #e-post > span { visibility: hidden; }
+html.js.not-ie .card { opacity: 0; }
+html.js #e-post > span { opacity: 0; }
 
 
 
