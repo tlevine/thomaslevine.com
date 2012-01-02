@@ -14,7 +14,7 @@ render = web.template.render('templates', base='base', globals=t_globals)
 app = web.application(urls, globals())
 
 sellerIdentifier='05893252188137793034'
-SELLER_SECRET='_XlCAY7Tgi5xmsHg-K8SUA'
+SELLER_SECRET='c7ehLOf_pbyEEqy4-eVZsA'#'_XlCAY7Tgi5xmsHg-K8SUA'
 
 def maketoken(coinname,cents):
   return jwt.encode(
@@ -43,7 +43,7 @@ def maketoken(coinname,cents):
 
 class Penny:
   def GET(self):
-    return render.coin(maketoken("Penny",1))
+    return maketoken("Penny",1)
 
 class Nickel:
   def GET(self):
