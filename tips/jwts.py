@@ -14,7 +14,7 @@ def maketoken(coinname,cents):
     "iat" : int(time.time()),
     "request" :{
       "name" : coinname,
-      "description" : "You're dropping a %s in Tom's tip jar" % coinname,
+      "description" : "You're dropping a %s in Tom's tip jar." % coinname.lower(),
       "price" : "0.%02d" % cents,
       "currencyCode" : "USD",
       "sellerData" : ""
