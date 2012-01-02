@@ -94,7 +94,7 @@
               <li><a href="https://gitorious.org/tlevine">gitorious</a></li>
              </ul>
           </div>
-<!--
+
           <div id="tips" class="card smallcard">
             <h3>tips</h3>
             <ul class="nobullet">
@@ -103,6 +103,7 @@
               <li><a href="#" onclick="tip('dime')">dime</a></li>
             </ul>
           </div>
+
           <div id="semantic" class="card smallcard">
             <h3>graph</h3>
             <ul class="nobullet">
@@ -111,7 +112,7 @@
               <li><a href="thomaslevine.gpg">gpg</a></li>
             </ul>
           </div>
--->
+
         </div><!-- End #feeds-->
       </div><!-- End #wrap-->
     </div>
@@ -140,7 +141,8 @@
   <!-- scripts concatenated and minified via ant build script-->
   <script defer src="js/plugins.js"></script>
   <script defer src="js/script.js"></script>
-  <!-- <script defer src="js/tips.js"></script> -->
+  <script defer src="js/jwts.js"></script>
+  <script defer src="js/tips.js"></script>
   <!-- end scripts-->
 
 <!-- Protest SOPA scripts -->
@@ -172,6 +174,15 @@ $(function(){
   } catch( err ) {}
   </script><noscript><p><img src="http://piwik.thomaslevine.com/piwik.php?idsite=2" style="border:0" alt="" /></p></noscript>
   <!-- End Piwik Tracking Code -->
+
+  <!-- Tips libraries -->
+  <script type="text/javascript" src="http://www.google.com/jsapi"></script>
+  <script type="text/javascript">
+  google.load('payments', '1.0', {
+    'packages': ['sandbox_config']
+  });
+  </script>
+  <!-- End tips libraries -->
   
 </body>
 </html>

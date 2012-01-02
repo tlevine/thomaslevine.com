@@ -1,16 +1,21 @@
-google.load('payments', '1.0', {
-  'packages': ['sandbox_config']
-});
+//Success handler
+var successHandler = function(purchaseAction){
+  if (window.console != undefined) {
+    console.log("Purchase completed successfully.");
+  }
+}
 
-jwts={
-  penny:"abc"
-, nickel:"abc"
-, dime:"abc"
-};
+//Failure handler
+var failureHandler = function(purchaseActionError){
+  if (window.console != undefined) {
+    console.log("Purchase did not complete.");
+  }
+}
 
-function tip(jwt){
+function tip(coinname){
+  $('#sopa').hide();
   goog.payments.inapp.buy({
-    'jwt'     : jwts[jwt],
+    'jwt'     : jwts[coinname],
     'success' : successHandler,
     'failure' : failureHandler
   });

@@ -23,7 +23,7 @@ def maketoken(coinname,cents):
 
 
 if __name__ == "__main__":
-  print json.dumps({
+  print "jwts=%s;" % json.dumps({
     "penny":maketoken("Penny",1)
   , "nickel":maketoken("Nickel",5)
   , "dime":maketoken("Dime",10)
