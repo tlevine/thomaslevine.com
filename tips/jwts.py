@@ -1,7 +1,8 @@
 import jwt,time,json
+DEVELOPMENT=False
 
 sellerIdentifier='05893252188137793034'
-SELLER_SECRET='c7ehLOf_pbyEEqy4-eVZsA'#'_XlCAY7Tgi5xmsHg-K8SUA'
+SELLER_SECRET='c7ehLOf_pbyEEqy4-eVZsA' if DEVELOPMENT else '_XlCAY7Tgi5xmsHg-K8SUA'
 
 def maketoken(coinname,cents):
   return jwt.encode(

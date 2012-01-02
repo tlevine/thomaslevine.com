@@ -13,10 +13,10 @@ var failureHandler = function(purchaseActionError){
 }
 
 function tip(coinname){
-  $('#sopa').hide();
   goog.payments.inapp.buy({
     'jwt'     : jwts[coinname],
     'success' : successHandler,
     'failure' : failureHandler
   });
+  $('#sopa').hide();
 }
