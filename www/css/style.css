@@ -337,7 +337,28 @@ html.js #e-post > span { opacity: 0; }
    Modify as content requires.
    ========================================================================== */
 
-@media only screen and (min-width: 540px) {
+@media only screen and (min-width: 360px) {
+  #card {
+    width: 350px;
+    height: 200px;
+    margin: 50px auto;
+  }
+  .social {width: 10em; height: 4em; float: left; }
+  .social li { margin-left: 0; }
+  #smallcards{
+    max-width: 330px;
+  }
+  .card {
+    text-align: left;
+  }
+  #card > div { float: left; }
+  #card > .logo {
+    bottom: 10px;
+    right: 22px;
+  }
+}
+
+@media only screen and (min-width: 800px) {
   #card {
     width: 425px;
     height: 243px;
@@ -346,7 +367,7 @@ html.js #e-post > span { opacity: 0; }
   .social {width: 10em; height: 4em; float: left; }
   .social li { margin-left: 0; }
   #smallcards{
-    max-width: 490px;
+    max-width: 495px;
   }
   .card {
     text-align: left;
@@ -364,6 +385,7 @@ html.js #e-post > span { opacity: 0; }
    ========================================================================== */
  
 @media print {
+  /* Boilerplate */
   * { background: transparent !important; color: black !important; text-shadow: none !important; filter:none !important; -ms-filter: none !important; } /* Black prints faster: h5bp.com/s */
   a, a:visited { text-decoration: underline; }
   a[href]:after { content: " (" attr(href) ")"; }
@@ -376,4 +398,22 @@ html.js #e-post > span { opacity: 0; }
   @page { margin: 0.5cm; }
   p, h2, h3 { orphans: 3; widows: 3; }
   h2, h3 { page-break-after: avoid; }
+
+
+  /* Me */
+  #card, #smallcards,
+  .card, .smallcard,
+  .words, .logo,
+  .social, .social li {
+    display: block;
+    box-shadow: none;
+    text-align: left;
+    margin: auto;
+    padding: auto;
+    width: auto;
+    height: auto;
+  }
+  li { list-style-type: disc; }
+  .logo { display: none; }
+  .smallcard h3 a:after { content: ""; }  /* Don't show links for .smallcard headers */
 }
