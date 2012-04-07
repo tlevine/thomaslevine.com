@@ -337,7 +337,17 @@ html.js #e-post > span { opacity: 0; }
    Modify as content requires.
    ========================================================================== */
 
-@media only screen and (min-width: 360px) {
+@media only screen and (max-width: 220px) {
+  #card, #smallcards, .smallcard{
+    width: 100%;
+    margin-left: 0; margin-right: 0;
+    padding-left: 0; padding-right: 0;
+    max-width: 220px;
+  }
+  #card > .logo > img { width: 100%; } 
+}
+
+@media only screen and (min-width: 440px) {
   #card {
     width: 350px;
     height: 200px;
@@ -358,7 +368,7 @@ html.js #e-post > span { opacity: 0; }
   }
 }
 
-@media only screen and (min-width: 800px) {
+@media only screen and (min-width: 880px) {
   #card {
     width: 425px;
     height: 243px;
