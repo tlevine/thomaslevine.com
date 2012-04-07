@@ -243,7 +243,7 @@ p, h1, h2, h3, h4, h5 { margin: 0; padding: 0; }
   width: 95px;
   height: 95px;
   float: left;
-  margin: 20px;
+  margin: 25px;
   padding: 15px;
   border-width: 0px;
 }
@@ -337,15 +337,16 @@ html.js #e-post > span { opacity: 0; }
    Modify as content requires.
    ========================================================================== */
 
-@media only screen and (max-width: 220px) {
+/*
+@media only screen and (max-width: 200px) {
   #card, #smallcards, .smallcard{
     width: 100%;
     margin-left: 0; margin-right: 0;
     padding-left: 0; padding-right: 0;
-    max-width: 220px;
   }
   #card > .logo > img { width: 100%; } 
 }
+*/
 
 @media only screen and (min-width: 440px) {
   #card {
@@ -360,6 +361,9 @@ html.js #e-post > span { opacity: 0; }
   }
   .card {
     text-align: left;
+  }
+  .smallcard {
+    margin: 20px;
   }
   #card > div { float: left; }
   #card > .logo {
