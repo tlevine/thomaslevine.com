@@ -43,8 +43,8 @@ for path in paths:
 
     # Optional categories line
     categoriesline = f.readline().strip()
-    if len(categoriesline) >= 10 and categoriesline[0:10].lower() == 'categories':
-        categories = categoriesline[10:].split(',')
+    if len(categoriesline) >= 12 and categoriesline[0:12].lower() == 'categories: ':
+        categories = [category.strip() for category in categoriesline[12:].split(',')]
         emptyline = f.readline().strip()
     elif '' == categoriesline:
         categories = []
