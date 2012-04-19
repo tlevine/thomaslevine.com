@@ -170,7 +170,7 @@ def main():
 
     # Add the feeds
     feedcard = etree.SubElement(wrap, 'div')
-    feedcard.attrib['id'] = 'feed'
+    feedcard.attrib['id'] = 'table-of-contents'
     feedcard.attrib['class'] = 'bigcard card'
     h2 = etree.SubElement(feedcard, 'h2')
     h2.text = 'Posts'
