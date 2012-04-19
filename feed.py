@@ -93,7 +93,7 @@ def getfeed(paths):
             raise
 
         # Construct the link
-        link = BLOG_ROOT + path
+        link = os.path.join(BLOG_ROOT, *os.path.split(path)[1:])
 
         # Append the item
         unsortedItems.append({
@@ -164,15 +164,21 @@ def main():
     img = html.cssselect('#card .logo img')[0]
     img.attrib['src'] = '../' + img.attrib['src']
 
+    for script in html.cssselect('script'):
+        if script.attrib.get('src', '       ')[:2] == 'js':
+            script.attrib['src'] = '../' + script.attrib['src']
+
     # Add the feeds
     feedcard = etree.SubElement(wrap, 'div')
     feedcard.attrib['id'] = 'feed'
     feedcard.attrib['class'] = 'bigcard card'
+    h2 = etree.SubElement(feedcard, 'h2')
+    h2.text = 'Posts'
     ul = etree.SubElement(feedcard, 'ul')
     for item in feed.items:
         li = etree.SubElement(ul, 'li')
         a = etree.SubElement(li, 'a')
-        a.attrib['href'] = item['link']
+        a.attrib['href'] = item['link'].replace(BLOG_ROOT, '')
         a.text = item['title']
 
     # Write
