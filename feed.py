@@ -2,14 +2,13 @@
 "Generate Thomas Levine's RSS feed"
 
 import datetime
-import PyRSS2Gen
+from feedformatter import Feed
 import os
 import shutil
 import misaka
 from cgi import escape
 
 DOMAIN = "http://thomaslevine.com"
-RSS = DOMAIN + "/rss"
 BLOG_DIR = '!'
 BLOG_ROOT = DOMAIN + '/' + BLOG_DIR + '/'
 NOW = datetime.datetime.utcnow()
@@ -23,16 +22,16 @@ def getpaths(sourcedir = 'blog'):
             # Select the markdown files.
             if filename[-3:] == '.md':
                 mdpaths.append(os.path.join(dirname, filename))
-            elif filename == 'rss':
-                raise ValueError('The file name "rss" is reserved for the rss feed.')
+            elif filename in ['rss', 'rss1', 'rss2', 'atom', 'opml']:
+                raise ValueError('The file name "{0}" is reserved for the {0} feed.'.format(filename))
             else:
                 otherpaths.append(os.path.join(dirname, filename))
 
     # Don't do anything with otherpaths yet.
     return mdpaths
 
-def getrss(paths):
-    "Make rss items out of paths"
+def getfeed(paths):
+    "Make feed items out of paths"
     unsortedItems = []
     unsortedDates = []
     for path in paths:
@@ -91,28 +90,28 @@ def getrss(paths):
         link = BLOG_ROOT + path
 
         # Append the item
-        unsortedItems.append(PyRSS2Gen.RSSItem(
-             title = escape(title),
-             link = link,
-             guid =  PyRSS2Gen.Guid(link),
-             description = escape(description),
-             pubDate = pubDate,
-             categories = categories
-        ))
+        unsortedItems.append({
+             'title': escape(title),
+             'link': link,
+             'guid': link,
+             'description': escape(description),
+             'pubDate': pubDate,
+             'categories': categories
+        })
         unsortedDates.append(pubDate)
 
     sortingHat = zip(unsortedDates, unsortedItems)
     sortingHat.sort(reverse = True)
     sortedDates, sortedItems = zip(*sortingHat)
 
-    rss = PyRSS2Gen.RSS2(
-        title = "Thomas Levine",
-        link = RSS,
-        description = "Thomas Levine",
-        lastBuildDate = NOW,
-        items = sortedItems
-    )
-    return rss
+    feed = Feed()
+    feed.feed['title'] = "Thomas Levine"
+    feed.feed['description'] = "Thomas Levine"
+    feed.feed['lastBuildDate'] = NOW
+    feed.feed['link'] = DOMAIN
+    feed.feed['items'] = sortedItems
+
+    return feed
 
 
 def cleanup(outdir = BLOG_DIR):
@@ -139,7 +138,9 @@ def main():
         shutil.copy(inpath, outpath)
 
     # Make rss
-    rss = getrss(paths)
-    rss.write_xml(open(os.path.join('!', 'rss'), "w"))
+    feed = getfeed(paths)
+    feed.format_rss1_file(os.path.join('!', 'rss1'))
+    feed.format_rss2_file(os.path.join('!', 'rss2'))
+    feed.format_atom_file(os.path.join('!', 'atom'))
 
 main()

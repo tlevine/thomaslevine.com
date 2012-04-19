@@ -9,7 +9,7 @@ ant build
 cd -
 
 # Build the blog
-./rss.py
+./feed.py
 mv ! www/publish
 
 # Upload
