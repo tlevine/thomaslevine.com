@@ -10,8 +10,7 @@ cd -
 
 # Build the blog
 ./rss.py
-mv rss www/publish
-cp -R blog www/publish/!
+mv ! www/publish
 
 # Upload
 scp -r www/publish/* www-data@thomaslevine.com:/srv/www/thomaslevine.com/www
