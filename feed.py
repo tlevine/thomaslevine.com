@@ -7,7 +7,8 @@ import os
 import shutil
 import misaka
 from cgi import escape
-import lxml.html
+from lxml.html import parse, tostring
+from lxml import etree
 
 # URIs
 DOMAIN = "http://thomaslevine.com"
@@ -150,25 +151,33 @@ def main():
     feed.format_rss2_file(os.path.join('!', 'rss2'))
     feed.format_atom_file(os.path.join('!', 'atom'))
 
-    # Generate the list.
-    lis = ''
-    for item in feed.items:
-        lis += '<li><a href="{link}">{title}</a></li>'.format(**item)
-    feedcard = '<div id=feed class="bigcard card"><ul>%s</ul></div>' % lis
-
     # Render as HTML, using the home page as a template
     filename = os.path.join('www', 'publish', 'index.html')
-    html = lxml.html.parse(filename).getroot()
+    html = parse(filename).getroot()
     wrap = html.get_element_by_id('wrap')
-    wrap.remove(wrap.get_element_by_id('card'))
+    #wrap.remove(wrap.get_element_by_id('card'))
     wrap.remove(wrap.get_element_by_id('smallcards'))
     for stylesheet in html.xpath('//link[@rel="stylesheet"]'):
-        stylesheet.attrib['href'] = '../' + stylesheet.attrib['href']
+        href = '../' + stylesheet.attrib['href']
+        stylesheet.attrib['href'] = href 
 
-    placeholder = '{{{{}}}}'
-    wrap.text = placeholder 
-    out = lxml.html.tostring(html).replace('{{{{}}}}', feedcard)
+    img = html.cssselect('#card .logo img')[0]
+    img.attrib['src'] = '../' + img.attrib['src']
 
-    open(os.path.join('!', 'index.html'), 'w').write(out)
+    # Add the feeds
+    feedcard = etree.SubElement(wrap, 'div')
+    feedcard.attrib['id'] = 'feed'
+    feedcard.attrib['class'] = 'bigcard card'
+    ul = etree.SubElement(feedcard, 'ul')
+    for item in feed.items:
+        li = etree.SubElement(ul, 'li')
+        a = etree.SubElement(li, 'a')
+        a.attrib['href'] = item['link']
+        a.text = item['title']
+
+    # Write
+    f = open(os.path.join('!', 'index.html'), 'w')
+    f.write(tostring(html))
+    f.close()
 
 main()
