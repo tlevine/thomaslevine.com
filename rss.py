@@ -33,7 +33,8 @@ def getpaths(sourcedir = 'blog'):
 
 def getrss(paths):
     "Make rss items out of paths"
-    items = []
+    unsortedItems = []
+    unsortedDates = []
     for path in paths:
         f = open(path, 'r')
 
@@ -83,7 +84,7 @@ def getrss(paths):
         link = BLOG_ROOT + path
 
         # Append the item
-        items.append(PyRSS2Gen.RSSItem(
+        unsortedItems.append(PyRSS2Gen.RSSItem(
              title = escape(title),
              link = link,
              guid =  PyRSS2Gen.Guid(link),
@@ -91,13 +92,18 @@ def getrss(paths):
              pubDate = pubDate,
              categories = categories
         ))
+        unsortedDates.append(pubDate)
+
+    sortingHat = zip(unsortedDates, unsortedItems)
+    sortingHat.sort()
+    sortedDates, sortedItems = zip(*sortingHat)
 
     rss = PyRSS2Gen.RSS2(
         title = "Thomas Levine",
         link = RSS,
         description = "Thomas Levine",
         lastBuildDate = datetime.datetime.utcnow(),
-        items = items
+        items = sortedItems
     )
     return rss
 
