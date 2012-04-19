@@ -12,7 +12,7 @@ DOMAIN = "http://thomaslevine.com"
 RSS = DOMAIN + "/rss"
 BLOG_DIR = '!'
 BLOG_ROOT = DOMAIN + '/' + BLOG_DIR + '/'
-
+NOW = datetime.datetime.utcnow()
 
 def getpaths(sourcedir = 'blog'):
     "Find all markdown files"
@@ -36,6 +36,12 @@ def getrss(paths):
     unsortedItems = []
     unsortedDates = []
     for path in paths:
+        # Close the file from the previous iteration
+        try:
+            f.close()
+        except NameError:
+            pass
+
         f = open(path, 'r')
 
         # Title
@@ -54,6 +60,10 @@ def getrss(paths):
         except ValueError:
             params = (path, datetime.date.today().strftime('%B %d, %Y'))
             raise ValueError('The third line of %s should be either the word "Draft" or a date in this format: %s.' % params)
+        if pubDate > NOW:
+            # Ignore dates in the future
+            print('Skipping %s because its pubDate is in the future' % path)
+            continue
 
         # Optional categories line
         categoriesline = f.readline().strip()
@@ -77,9 +87,6 @@ def getrss(paths):
             print("Error parsing %s" % path)
             raise
 
-        # Close the file
-        f.close()
-
         # Construct the link
         link = BLOG_ROOT + path
 
@@ -95,14 +102,14 @@ def getrss(paths):
         unsortedDates.append(pubDate)
 
     sortingHat = zip(unsortedDates, unsortedItems)
-    sortingHat.sort()
+    sortingHat.sort(reverse = True)
     sortedDates, sortedItems = zip(*sortingHat)
 
     rss = PyRSS2Gen.RSS2(
         title = "Thomas Levine",
         link = RSS,
         description = "Thomas Levine",
-        lastBuildDate = datetime.datetime.utcnow(),
+        lastBuildDate = NOW,
         items = sortedItems
     )
     return rss
