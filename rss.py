@@ -36,14 +36,25 @@ for path in paths:
     if dateline.lower().strip() == 'draft':
         continue
     try:
-        pubDate = datetime.datetime.strptime(dateline, '%B %d, %Y').date()
+        pubDate = datetime.datetime.strptime(dateline, '%B %d, %Y')
     except ValueError:
         params = (path, datetime.date.today().strftime('%B %d, %Y'))
         raise ValueError('The third line of %s should be either the word "Draft" or a date in this format: %s.' % params)
 
+    # Optional categories line
+    categoriesline = f.readline().strip()
+    if len(categoriesline) >= 10 and categoriesline[0:10].lower() == 'categories':
+        categories = categoriesline[10:].split(',')
+        emptyline = f.readline().strip()
+    elif '' == categoriesline:
+        categories = []
+        emptyline = categoriesline
+    else:
+        raise ValueError("The fourth line of %s should have a list of categories or be empty." % path)
+     
     # Empty line
-    if '' != f.readline().strip():
-        raise ValueError("The fourth line of %s should be empty, but it contains something." % path)
+    if '' != emptyline:
+        raise ValueError("There should be an empty line between the header and body inside %s." % path)
 
     # Description
     description = misaka.html(f.read())
@@ -61,6 +72,7 @@ for path in paths:
          guid =  PyRSS2Gen.Guid(link),
          description = escape(description),
          pubDate = pubDate,
+         categories = categories
     ))
 
 rss = PyRSS2Gen.RSS2(

@@ -1,6 +1,6 @@
 BetterCoach
 =======
-Draft
+May 23, 2012
 
 The [Coach](http://coachusa.com) [bus](http://coachcanada.ca)
 [schedule-finder](http://shortlinebus.com) is hard-to-use,
