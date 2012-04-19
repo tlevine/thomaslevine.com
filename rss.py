@@ -28,15 +28,18 @@ for path in paths:
     title = f.readline()
 
     # h1
-    if set('=') != f.readline()[:-1]:
+    if set('=') != set(f.readline()[:-1]):
         raise ValueError("The second line of %s contains characters other than equal-signs." % path)
 
     # Date
+    dateline = f.readline()[:-1]
+    if dateline.lower().strip() == 'draft':
+        continue
     try:
-        pubDate = datetime.datetime.strptime(f.readline()[-1], '%B %d, %Y').date()
+        pubDate = datetime.datetime.strptime(dateline, '%B %d, %Y').date()
     except ValueError:
         params = (path, datetime.date.today().strftime('%B %d, %Y'))
-        raise ValueError("The third line of %s should contain a date in this format: %s." % params)
+        raise ValueError('The third line of %s should be either the word "Draft" or a date in this format: %s.' % params)
 
     # Empty line
     if '' != f.readline().strip():

@@ -1,3 +1,7 @@
+BetterCoach
+=======
+Draft
+
 The [Coach](http://coachusa.com) [bus](http://coachcanada.ca)
 [schedule-finder](http://shortlinebus.com) is hard-to-use,
 so I made a [better one](http://bettercoa.ch).
@@ -59,3 +63,5 @@ While working on BetterCoach, I also noticed that the
 official schedule-finder requires Javascript.
 To say it fancy-like, it does not degrade gracefully.
 They could have done without Javascript by adding appropriate buttons.
+
+
