@@ -7,6 +7,7 @@ import os
 import shutil
 import misaka
 from cgi import escape
+import lxml.html
 
 # URIs
 DOMAIN = "http://thomaslevine.com"
@@ -48,7 +49,7 @@ def getfeed(paths):
         f = open(path, 'r')
 
         # Title
-        title = f.readline()
+        title = f.readline()[:-1]
 
         # h1
         if set('=') != set(f.readline()[:-1]):
@@ -149,12 +150,25 @@ def main():
     feed.format_rss2_file(os.path.join('!', 'rss2'))
     feed.format_atom_file(os.path.join('!', 'atom'))
 
-    # Render as HTML
+    # Generate the list.
     lis = ''
     for item in feed.items:
         lis += '<li><a href="{link}">{title}</a></li>'.format(**item)
+    feedcard = '<div id=feed class="bigcard card"><ul>%s</ul></div>' % lis
 
-    html = '<ul>%s</ul>' % lis
-    open(os.path.join('!', 'table_of_contents.html'), 'w').write(html)
+    # Render as HTML, using the home page as a template
+    filename = os.path.join('www', 'publish', 'index.html')
+    html = lxml.html.parse(filename).getroot()
+    wrap = html.get_element_by_id('wrap')
+    wrap.remove(wrap.get_element_by_id('card'))
+    wrap.remove(wrap.get_element_by_id('smallcards'))
+    for stylesheet in html.xpath('//link[@rel="stylesheet"]'):
+        stylesheet.attrib['href'] = '../' + stylesheet.attrib['href']
+
+    placeholder = '{{{{}}}}'
+    wrap.text = placeholder 
+    out = lxml.html.tostring(html).replace('{{{{}}}}', feedcard)
+
+    open(os.path.join('!', 'index.html'), 'w').write(out)
 
 main()

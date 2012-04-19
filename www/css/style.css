@@ -258,15 +258,18 @@ p, h1, h2, h3, h4, h5 { margin: 0; padding: 0; }
   margin: 25px auto;
 }
 
+.bigcard {
+  width: 200px;
+  margin: 25px auto;
+}
+
 /* The calling card */
 #card {
   /* == Card size ==============
      The smallest pretty width is 200px. This is fine because most phones are at least 320px wide.
      http://tripleodeon.com/wp-content/uploads/2011/12/table.html
      ========================= */
-  width: 200px;
   height: 350px;
-  margin: 25px auto;
   padding: 25px 25px 0 25px;
 }
 #card { position: relative; }
@@ -297,7 +300,9 @@ p, h1, h2, h3, h4, h5 { margin: 0; padding: 0; }
 html.js.not-ie .card { opacity: 0; }
 html.js #e-post > span { opacity: 0; }
 
-
+#feed {
+  width: height: auto; padding: 25px;
+}
 
 
 
@@ -342,7 +347,7 @@ html.js #e-post > span { opacity: 0; }
 
 /*
 @media only screen and (max-width: 200px) {
-  #card, #smallcards, .smallcard{
+  .bigcard, #smallcards, .smallcard{
     width: 100%;
     margin-left: 0; margin-right: 0;
     padding-left: 0; padding-right: 0;
@@ -352,9 +357,8 @@ html.js #e-post > span { opacity: 0; }
 */
 
 @media only screen and (min-width: 440px) {
-  #card {
+  .bigcard {
     width: 350px;
-    height: 200px;
     margin: 50px auto;
   }
   .social {width: 10em; height: 4em; float: left; }
@@ -376,10 +380,12 @@ html.js #e-post > span { opacity: 0; }
 }
 
 @media only screen and (min-width: 880px) {
-  #card {
+  .bigcard {
     width: 425px;
-    height: 243px;
     margin: 50px auto;
+  }
+  #card {
+    height: 243px;
   }
   .social {width: 10em; height: 4em; float: left; }
   .social li { margin-left: 0; }
