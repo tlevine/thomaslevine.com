@@ -361,6 +361,9 @@ html.js #e-post > span { opacity: 0; }
     width: 350px;
     margin: 50px auto;
   }
+  #card{
+    height: 200px;
+  }
   .social {width: 10em; height: 4em; float: left; }
   .social li { margin-left: 0; }
   #smallcards{
