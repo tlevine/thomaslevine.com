@@ -8,10 +8,14 @@ import shutil
 import misaka
 from cgi import escape
 
+# URIs
 DOMAIN = "http://thomaslevine.com"
 BLOG_DIR = '!'
 BLOG_ROOT = DOMAIN + '/' + BLOG_DIR + '/'
-NOW = datetime.datetime.utcnow()
+
+# Other constants
+FEED_FILES = ['rss', 'rss1', 'rss2', 'atom', 'opml']
+NOW = datetime.datetime.now().timetuple()
 
 def getpaths(sourcedir = 'blog'):
     "Find all markdown files"
@@ -22,7 +26,7 @@ def getpaths(sourcedir = 'blog'):
             # Select the markdown files.
             if filename[-3:] == '.md':
                 mdpaths.append(os.path.join(dirname, filename))
-            elif filename in ['rss', 'rss1', 'rss2', 'atom', 'opml']:
+            elif filename in FEED_FILES:
                 raise ValueError('The file name "{0}" is reserved for the {0} feed.'.format(filename))
             else:
                 otherpaths.append(os.path.join(dirname, filename))
@@ -55,7 +59,7 @@ def getfeed(paths):
         if dateline.lower().strip() == 'draft':
             continue
         try:
-            pubDate = datetime.datetime.strptime(dateline, '%B %d, %Y')
+            pubDate = datetime.datetime.strptime(dateline, '%B %d, %Y').timetuple()
         except ValueError:
             params = (path, datetime.date.today().strftime('%B %d, %Y'))
             raise ValueError('The third line of %s should be either the word "Draft" or a date in this format: %s.' % params)
@@ -109,7 +113,7 @@ def getfeed(paths):
     feed.feed['description'] = "Thomas Levine"
     feed.feed['lastBuildDate'] = NOW
     feed.feed['link'] = DOMAIN
-    feed.feed['items'] = sortedItems
+    feed.items = sortedItems
 
     return feed
 
@@ -137,10 +141,20 @@ def main():
         outpath = os.path.join(*outpath_tuple)
         shutil.copy(inpath, outpath)
 
-    # Make rss
+    # Make feed
     feed = getfeed(paths)
+
+    # Render in feed formats
     feed.format_rss1_file(os.path.join('!', 'rss1'))
     feed.format_rss2_file(os.path.join('!', 'rss2'))
     feed.format_atom_file(os.path.join('!', 'atom'))
+
+    # Render as HTML
+    lis = ''
+    for item in feed.items:
+        lis += '<li><a href="{link}">{title}</a></li>'.format(**item)
+
+    html = '<ul>%s</ul>' % lis
+    open(os.path.join('!', 'table_of_contents.html'), 'w').write(html)
 
 main()
