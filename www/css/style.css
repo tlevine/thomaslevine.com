@@ -277,7 +277,7 @@ p, h1, h2, h3, h4, h5 { margin: 0; padding: 0; }
   position: absolute;
   bottom: 0px;
 }
-#card > .logo > img { width: 200px; height: 200px; } 
+#card > .logo img { width: 200px; height: 200px; } 
 .words {margin-top: 0.8em; }
 .social {
   width: 7em;
