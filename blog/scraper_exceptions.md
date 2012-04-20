@@ -1,6 +1,6 @@
 Handling exceptions in scrapers
 ========
-April 19, 2012
+April 17, 2012
 
 When requesting and parsing data from a source with unknown properties
 and random behavior (i.e., scraping), I expect all kinds of bizarrities to occur.
