@@ -36,7 +36,7 @@ def getpaths(sourcedir = 'blog'):
     # Don't do anything with otherpaths yet.
     return mdpaths
 
-def getfeed(paths):
+def getfeed(paths, sourcedir = 'blog'):
     "Make feed items out of paths"
     unsortedItems = []
     unsortedDates = []
@@ -95,10 +95,10 @@ def getfeed(paths):
         # Construct the link
         parent = path
         dirs = []
-        while parent != '':
+        while parent != sourcedir:
             parent, current = os.path.split(parent)
             dirs.insert(0, current)
-        link = os.path.join(BLOG_ROOT, *os.path.split(dirs)[1:])
+        link = os.path.join(BLOG_ROOT, *dirs)
 
         # Append the item
         unsortedItems.append({
