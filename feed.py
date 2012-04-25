@@ -27,7 +27,7 @@ def getpaths(sourcedir = 'blog'):
         for filename in filenames:
             # Select the markdown files.
             if filename[-3:] == '.md':
-                mdpaths.append(os.path.join(dirname, filename))
+                mdpaths.append(os.path.join(*([dirname] + dirnames + [filename])))
             elif filename in FEED_FILES:
                 raise ValueError('The file name "{0}" is reserved for the {0} feed.'.format(filename))
             else:
@@ -93,7 +93,12 @@ def getfeed(paths):
             raise
 
         # Construct the link
-        link = os.path.join(BLOG_ROOT, *os.path.split(path)[1:])
+        parent = path
+        dirs = []
+        while parent != '':
+            parent, current = os.path.split(parent)
+            dirs.insert(0, current)
+        link = os.path.join(BLOG_ROOT, *os.path.split(dirs)[1:])
 
         # Append the item
         unsortedItems.append({

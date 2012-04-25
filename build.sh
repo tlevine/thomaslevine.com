@@ -22,8 +22,12 @@ if $deploy; then
   echo Uploading to thomaslevine.com
   scp -r www/publish/* www-data@thomaslevine.com:/srv/www/thomaslevine.com/www
 else
+  echo
+  echo ---------------------------------------------------
   echo Not uploaded, but available locally at
   echo "`pwd`"/www/publish/index.html
   echo
   echo Run \`build.sh deploy\` to deploy after build.
+  echo ---------------------------------------------------
+  echo
 fi
