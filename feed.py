@@ -72,14 +72,14 @@ def getfeed(paths):
 
         # Optional categories line
         categoriesline = f.readline().strip()
-        if len(categoriesline) >= 12 and categoriesline[0:12].lower() == 'categories: ':
+        if len(categoriesline) >= 12 and categoriesline[0:12] == 'Categories: ':
             categories = [category.strip() for category in categoriesline[12:].split(',')]
             emptyline = f.readline().strip()
         elif '' == categoriesline:
             categories = []
             emptyline = categoriesline
         else:
-            raise ValueError("The fourth line of %s should have a list of categories or be empty." % path)
+            raise ValueError('The fourth line of %s should say "Categories: " and then list of categories or be empty.' % path)
          
         # Empty line
         if '' != emptyline:
