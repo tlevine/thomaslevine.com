@@ -34,7 +34,17 @@ def getpaths(sourcedir = 'blog'):
                 otherpaths.append(os.path.join(dirname, filename))
 
     # Don't do anything with otherpaths yet.
+    print mdpaths
     return mdpaths
+
+def full_path_split(path, sourcedir = 'blog'):
+    "Split a path into a list of single directories and files"
+    parent = path
+    dirs = []
+    while parent != sourcedir:
+        parent, current = os.path.split(parent)
+        dirs.insert(0, current)
+    return dirs
 
 def getfeed(paths, sourcedir = 'blog'):
     "Make feed items out of paths"
@@ -93,11 +103,7 @@ def getfeed(paths, sourcedir = 'blog'):
             raise
 
         # Construct the link
-        parent = path
-        dirs = []
-        while parent != sourcedir:
-            parent, current = os.path.split(parent)
-            dirs.insert(0, current)
+        dirs = full_path_split(path, sourcedir = sourcedir)
         link = os.path.join(BLOG_ROOT, *dirs)
 
         # Append the item
@@ -143,10 +149,12 @@ def main():
     paths = getpaths()
 
     # Copy them to the out directory
-    for inpath in paths:
-        outpath_tuple = (BLOG_DIR,) + os.path.split(inpath)[1:]
-        outpath = os.path.join(*outpath_tuple)
-        shutil.copy(inpath, outpath)
+    for infile in paths:
+        outfile_list = [BLOG_DIR] + full_path_split(infile, sourcedir = '')[1:]
+        outfile = os.path.join(*outfile_list)
+        outdir = os.path.join(*outfile_list[:-1])
+        os.mkdir(outdir)
+        shutil.copy(infile, outfile)
 
     # Make feed
     feed = getfeed(paths)
