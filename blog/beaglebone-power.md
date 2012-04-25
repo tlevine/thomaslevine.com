@@ -4,7 +4,7 @@ Draft
 
 I want to make a cluster of [BeagleBones](http://beagleboard.org/bone),
 so I'm pondering how to power them. I think I want to build a unit that
-will provide 5 volts at least 1 amp.
+will provide 5 volts at least 1 amp, but I don't know how to make that.
 
 ## Power requirements
 
@@ -66,6 +66,7 @@ Kernel Booting (Peak) & 502 & 350 &    470 \\
 Kernel Idling         & 305 & 170 &    290 \\
 -->
 
-## Stuff
+## What I want
 
-Foo bar baz.
+I want something like [this](http://search.digikey.com/scripts/DkSearch/dksus.dll?lang=en&site=us&KeyWords=993-1050-ND&WT.z_slp_buy=TI_BeagleBoard)
+except with several barrel connectors coming out of it. Where can I read about how to make this?
