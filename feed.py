@@ -1,4 +1,4 @@
-#!/usr/bin/env python2
+#!/usr/bin/env python
 "Generate Thomas Levine's RSS feed"
 
 import datetime
