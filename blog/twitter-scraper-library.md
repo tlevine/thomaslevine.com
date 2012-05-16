@@ -41,8 +41,15 @@ be more than 200 relevant results mentioning a particular user.
 The [full script](tcamp_tweets) also counts how many tweets were made
 by each user.
 
+### Library
+
+Remember, this is a library, so you can easily reuse it in your own
+scripts, like [Max Richman](max) has already [started doing](datahh_tweets).
+
 [annaps]: https://scraperwiki.com/profiles/AnnaPS/
 [basic]: https://scraperwiki.com/scrapers/basic_twitter_scraper/
 [tcamp]: http://transparencycamp.org/
 [twitter_search]: https://scraperwiki.com/scrapers/twitter_search/
 [tcamp_tweets]: https://scraperwiki.com/scrapers/tcamp_tweets/
+[datahh_tweets]: https://twitter.com/#!/datahh/status/198507824958013441
+[max]: https://twitter.com/datahh/
