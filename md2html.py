@@ -1,3 +1,4 @@
+#!/usr/bin/env python2
 import os
 from lxml.html import fromstring, tostring
 import sys
