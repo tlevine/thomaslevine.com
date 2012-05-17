@@ -34,7 +34,7 @@ def getpaths(sourcedir = 'blog'):
                 otherpaths.append(os.path.join(dirname, filename))
 
     # Don't do anything with otherpaths yet.
-    print mdpaths
+    # print mdpaths
     return mdpaths
 
 def full_path_split(path, sourcedir = 'blog'):

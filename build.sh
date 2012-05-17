@@ -15,7 +15,7 @@ ant build
 cd -
 
 # Build the blog
-./feed.py
+python2 feed.py || python feed.py
 mv ! www/publish
 
 if $deploy; then
