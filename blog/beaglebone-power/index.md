@@ -3,8 +3,8 @@ BeagleBone Power Supply
 Draft
 
 I want to make a cluster of [BeagleBones](http://beagleboard.org/bone),
-so I'm pondering how to power them. I think I want to build a unit that
-will provide 5 volts at least 1 amp, but I don't know how to make that.
+so I was pondering how to power them. I wanted a unit that would provide
+5 volts at least 1 amp per BeagleBone.
 
 ## Power requirements
 
@@ -23,7 +23,7 @@ the following specifications, taken from the
 BeagleBoard [recommendeds](http://beagleboard.org/peripheral#5V)
 accomplishing this with a Digi-Key-supplied PHIHONG USA PSC12R-050.
 
-## Other approaches
+## Approaches I don't want
 
 ### Recommended BeagleBone power supplies
 
@@ -54,9 +54,11 @@ If it does, it would substantially increase power consumption; Revision 0.0 of t
 (February 2, 2012) analyzes the "power consumption of the board in ...
 various scenarious" in this table.
 
+I tried it anyway to be sure, and I couldn't connect.
+
 ![Table of power usage indicating that plugging in the only USB cable
   uses about three-halves the power of plugging in only the DC cable
-](beaglebone-power/beaglebone-power-consumption.png)
+](beaglebone-power-consumption.png)
 
 <!-- The table in LaTeX format
 MODE                  & USB &  DC & DC+USB \\
@@ -66,7 +68,16 @@ Kernel Booting (Peak) & 502 & 350 &    470 \\
 Kernel Idling         & 305 & 170 &    290 \\
 -->
 
-## What I want
+## What I wanted and made
 
-I want something like [this](http://search.digikey.com/scripts/DkSearch/dksus.dll?lang=en&site=us&KeyWords=993-1050-ND&WT.z_slp_buy=TI_BeagleBoard)
-except with several barrel connectors coming out of it. Where can I read about how to make this?
+I really wanted something like [the recommended power supply](http://search.digikey.com/scripts/DkSearch/dksus.dll?lang=en&site=us&KeyWords=993-1050-ND&WT.z_slp_buy=TI_BeagleBoard)
+except with several barrel connectors coming out of it. So I bought a
+[5V 40W power supply](http://www.bonanza.com/listings/200W-5V-40A-Regulated-Switching-LED-Power-Supply-New-200W%C2%A0-5V-%C2%A0DC-40A-Regula/75325441) and a bunch of
+[plugs](http://www.allspectrum.com/store/dc-plug-55x21mm-male-to-fixed-screw-terminal-each-p-8133.html).
+
+    Add pictures here.
+
+I mounted the BeagleBones right on top of each other, so I made a little post and
+just soldered some wires to it.
+
+    Add a picture here.
