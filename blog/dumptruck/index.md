@@ -27,6 +27,7 @@ but the change shouldn't break much existing code. Here are two differences.
 
 What happens if you do this?
 
+    import scraperwiki
     shopping_list = ['carrots', 'orange juice', 'chainsaw']
     scraperwiki.sqlite.save([], 'shopping_list': shopping_list)
 
