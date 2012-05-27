@@ -1,0 +1,172 @@
+                                                                                                                                                                                                                                                               
+Delivered-To: thomas.levine@gmail.com
+Received: by 10.42.74.4 with SMTP id u4cs100345icj;
+        Mon, 14 Mar 2011 13:04:15 -0700 (PDT)
+Received: by 10.229.32.69 with SMTP id b5mr11179027qcd.266.1300133054919;
+        Mon, 14 Mar 2011 13:04:14 -0700 (PDT)
+Return-Path: <askcensus@custhelp.com>
+Received: from limestone5.mail.cornell.edu (limestone5.mail.cornell.edu [128.253.83.165])
+        by mx.google.com with ESMTP id k5si474574qcu.165.2011.03.14.13.04.14;
+        Mon, 14 Mar 2011 13:04:14 -0700 (PDT)
+Received-SPF: fail (google.com: domain of askcensus@custhelp.com does not designate 128.253.83.165 as permitted sender) client-ip=128.253.83.165;
+Authentication-Results: mx.google.com; spf=hardfail (google.com: domain of askcensus@custhelp.com does not designate 128.253.83.165 as permitted sender) smtp.mail=askcensus@custhelp.com; dkim=neutral (body hash did not verify) header.i=@custhelp.com
+X-CornellRouted: This message has been Routed already.
+Received: from orchid.mail.cornell.edu (orchid.mail.cornell.edu [132.236.56.61])
+by limestone5.mail.cornell.edu (8.14.4/8.14.4) withth ESMTP id p2EK498J011822;
+Mon, 14 Mar 2011 16:04:13 -0400 (EDT)
+Receivedived: from exchange.cornell.edu ([10.16.197.26])
+by orchid.mail.cornelll.edu (8.14.4/8.14.4) with ESMTP id p2EK4AcO002614;
+Mon, 14 Mar 2011 146:04:10 -0400 (EDT)
+Received: from walnut.mail.cornell.edu (128.253.83.153) by
+ cashub07.exchange.cornell.edu (10.16.197.26) with Microsoft SMTP Server id
+ 8.3.83.0; Mon, 14 Mar 2011 16:04:08 -0400
+Received: from mailgwps05.rightnowtech.com (mailgwps05.rightnowtech.com
+ [208.72.94.125])by walnut.mail.cornell.edu (8.14.4/8.14.4) withth ESMTP id
+ p2EK43EN027392for <tkl22@cornell.edu>; Mon, 14 Mar 2011 146:04:08 -0400
+DomainKey-Signature: q=dns; a=rsa-sha1; c=nofws;
+s=dkrnt; d=custhelp.com;
+h=DKIM-Signature:Received:Content-Type:From:Reply-To:To:Date:Subject:MIME-Version:Message-Id;
+b=GVWa1YhSMc3ZgpaxNzbAKhGaBuLHcaSHrpMb6BT3VpC7FBJ9eENsxjeZ6IqSP1+M
+IRpKwgXawjBHLYeYQ1yph+lmvzjenjPDkPmXjoo17+X02lEaNIhyRiwUp2s6/rNJ
+bk5G8eh6IZcRL4oMBmhbBSrLm1ScTS5VbgB6AbGkutY=
+DKIM-Signature: v=1; a=rsa-sha1; d=custhelp.com; s=dkimrnt; c=simple/simple;
+q=dns/txt; i=@custhelp.com; t=1300133042;
+h=From:Subject:Date:To:MIMEIME-Version:Content-Type;
+bh=PLmFNaVPdEfgx0evBkanJAN5Y+c=;
+b=U+0cWU7SMydKBuj57NqYYQCe5xTP8/KWF+oYkjuLHwSnRNMncxVxAJnUM65Sxa53
+/yHe/eWEG0WGBbXK9G3sm0kkbAePfhNOCzrbOgD0vXuOgOec+zlecLCUdUSbnkQ1
+yLOHggbC3En2c5BVqXls+KVqFtNfrjByXzsrvpzoLGc=;
+Received: from [10.45.0.65] ([10.45.0.65:56874]
+ helo=access-ps.rightnowtech.com)by rntps123.rnmk.com (envelope-from
+ <fromaskcensus@custhelp.com>)(ecelerity 2.2.2.45 r(34222M)) with ESMTPid
+ 		AE/B9-08585-2B47E7D4; Mon, 14 Mar 2011 15:04:02 -0500
+Received: from webps02.int.rightnowtech.com (localhost.localdomain
+ [127.0.0.1])by accesss-ps.rightnowtech.com ("Mail Server") with SMTP id
+ 8EB9F1277E9for <tkl22l22@cornell.edu>; Mon, 14 Mar 2011 15:04:02 -0500 (CDT)
+Content-Type: multipart/alternative;
+boundary="------------Boundary-00=_Q2D2VA40000000000000"
+From: AskCensus <askcensus@custhelp.com>
+Reply-To: "AskCensus" 
+    <askcensus@custhelp.com>
+To: tkl22@cornell.edu
+Date: Mon, 14 Mar 2011 16:04:02 -0400
+Subject: What proportion of people have middle initials? [Incident: 110314-000041]
+MIME-Version: 1.0
+Message-ID: <RNTT.Av_3_wpADv8S~Sf5Gu1k8~fAzZYqiC7~MuL~.1300133042.5D3AKdY15BkZ@webps02.int.rightnowtech.com>
+X-PMX-CORNELL-SPAM-CHECKED: Walnut
+X-PMX-Version: 5.5.9.395186, Antispam-Engine: 2.7.2.376379, Antispam-Data: 2011.3.14.195121
+X-PMX-CORNELL-REASON: CU_User_Override User Opted Out
+X-Additional-Recipients-Added: 2
+x-cornell-routed: Orchid
+x-ph: Cornell Routed
+
+--------------Boundary-00=_Q2D2VA40000000000000
+Content-Type: text/plain; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+
+
+Recently you requested personal assistance from our on-line support=20
+center. Below is a summary of your request and our response.
+
+We will assume your issue has been resolved if we do not hear from you
+within 48 hours.
+
+Thank you for allowing us to be of service to you.
+
+To access your question from our support site, click the following=20
+link or paste it into your web browser.
+https://ask.census.gov/app/account/questions/detail/i_id/186591
+
+
+Subject
+---------------------------------------------------------------
+What proportion of people have middle initials?
+
+
+Discussion Thread
+---------------------------------------------------------------
+Response Via Email(CLMSO - EMM) - 03/14/2011 16:04
+Thank you for using the US Census Bureau's Question and Answer Center. Un=
+fortunately, the subject you asked about is not one for which the Census =
+Bureau collects data. We are sorry we were not able to assist you.
+
+
+Question Reference #110314-000041
+---------------------------------------------------------------
+ Category Level 1: People
+ Category Level 2: Miscellaneous
+     Date Created: 03/14/2011 15:29
+     Last Updated: 03/14/2011 16:04
+           Status: Pending Closure
+               Cc:=20
+
+
+[---001:000999:23409---]
+
+
+--------------Boundary-00=_Q2D2VA40000000000000
+Content-Type: text/html; charset="iso-8859-1"
+Content-Transfer-Encoding: quoted-printable
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta http-equiv=3D"Content-Type" content=3D"text/html; charset=3Diso-885=
+9-1" />
+<style type=3D"text/css">
+td.header   { }
+td.text     { padding-left: 4px; padding-right: 4px; }
+td.label    { }
+td.data     { }
+</style>
+<title>What proportion of people have middle initials?</title>
+</head>
+<body>
+<br />
+Recently you requested personal assistance from our on-line support cente=
+r. Below is a summary of your request and our response.<br /><br />We wil=
+l assume your issue has been resolved if we do not hear from you within 4=
+8 hours.<br /><br />Thank you for allowing us to be of service to you.<br=
+ /><br /><p><a href=3D"https://ask.census.gov/app/account/questions/detai=
+l/i_id/186591">To access your question from our support site, click here.=
+</a></p><br />
+<table cellpadding=3D"2" cellspacing=3D"0" border=3D"0" width=3D"100%">
+<tr><td class=3D"header" colspan=3D"2" bgcolor=3D"#E0E0E0"><b>&nbsp;Subje=
+ct</b></td></tr>
+<tr><td class=3D"text" colspan=3D"2">What proportion of people have middl=
+e initials?</td></tr>
+<tr><td colspan=3D"2">&nbsp;</td></tr>
+<tr><td class=3D"header" colspan=3D"2" bgcolor=3D"#E0E0E0"><b>&nbsp;Discu=
+ssion Thread</b></td></tr>
+<tr><td class=3D"text" bgcolor=3D"#C6D3BA"><b>&nbsp;Response Via Email (C=
+LMSO - EMM)</b></td><td class=3D"text" bgcolor=3D"#C6D3BA" align=3D"right=
+">03/14/2011 16:04</td></tr>
+<tr><td class=3D"text" colspan=3D"2">Thank you for using the US Census Bu=
+reau's Question and Answer Center. Unfortunately, the subject you asked a=
+bout is not one for which the Census Bureau collects data. We are sorry w=
+e were not able to assist you.</td></tr>
+<tr><td colspan=3D"2">&nbsp;</td></tr>
+<tr><td colspan=3D"2" bgcolor=3D"#E0E0E0"><b>&nbsp;Question Reference #11=
+0314-000041</b></td></tr>
+<tr><td colspan=3D"2"><table cellspacing=3D"0" cellpadding=3D"0" width=3D=
+"100%">
+<tr><td class=3D"label" align=3D"right" width=3D"250px" nowrap><b>Categor=
+y Level 1:&nbsp;</b></td><td class=3D"data">People</td></tr>
+<tr><td class=3D"label" align=3D"right" width=3D"250px" nowrap><b>Categor=
+y Level 2:&nbsp;</b></td><td class=3D"data">Miscellaneous</td></tr>
+<tr><td class=3D"label" align=3D"right" width=3D"250px" nowrap><b>Date Cr=
+eated:&nbsp;</b></td><td class=3D"data">03/14/2011 15:29</td></tr>
+<tr><td class=3D"label" align=3D"right" width=3D"250px" nowrap><b>Last Up=
+dated:&nbsp;</b></td><td class=3D"data">03/14/2011 16:04</td></tr>
+<tr><td class=3D"label" align=3D"right" width=3D"250px" nowrap><b>Status:=
+&nbsp;</b></td><td class=3D"data">Pending Closure</td></tr>
+<tr><td class=3D"label" align=3D"right" width=3D"250px" nowrap><b>Cc:&nbs=
+p;</b></td><td class=3D"data"></td></tr>
+</table></td></tr>
+<tr><td colspan=3D"2">&nbsp;</td></tr>
+</table>
+[---001:000707:04749---]
+</body>
+</html>
+
+--------------Boundary-00=_Q2D2VA40000000000000--
