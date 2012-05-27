@@ -57,5 +57,9 @@ probably by accident. Over the past couple weeks, I
 [looked at](https://github.com/tlevine/united-states-middlenames)
 the names of 85,822,194 dead americans and came up with some more plots
 
-![]()
+[![Plot of middle name prevalence as a function of time by state, showing
+a relatively sharp increase from 10% to 80% between 1880 and 1930, followed
+by a plateau until 1960, followed by a smaller jump to 95% by 1975
+](us_middle_names_over_time_by_state.png)](us_middle_names_over_time_by_state.pdf)
+
 
