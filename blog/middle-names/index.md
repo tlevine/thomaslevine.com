@@ -52,14 +52,19 @@ substantially by school, the graduate school having a particularly low
 rate of middle names and the agriculture school having a particularly high rate.
 ](cornell_middle_names_by_school.png)
 
-I suspected that students underreport rather than overreport middle names,
-probably by accident. Over the past couple weeks, I
+I suspected that students underreport rather than
+[overreport](http://www.youtube.com/watch?v=OJgaaAfhR5I&t=7m51s)
+middle names. Over the past couple weeks, I
 [looked at](https://github.com/tlevine/united-states-middlenames)
-the names of 85,822,194 dead americans and came up with some more plots
+the names of 85,822,194 dead Americans and came up with some more plots
 
 [![Plot of middle name prevalence as a function of time by state, showing
 a relatively sharp increase from 10% to 80% between 1880 and 1930, followed
 by a plateau until 1960, followed by a smaller jump to 95% by 1975
 ](us_middle_names_over_time_by_state.png)](us_middle_names_over_time_by_state.pdf)
 
+The rate of middle names these days is about 90%, which is a lot more
+than the Cornell University student figures; this supports my suspicion
+that people under-report rather than over-report.
 
+it doesn't vary much by state
