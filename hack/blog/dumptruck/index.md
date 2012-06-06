@@ -17,13 +17,14 @@ of `scraperwiki_local`.
 
     pip install dumptruck
 
-### Differences
+## Differences
 
 DumpTruck works a bit differently from (and better than) the hosted ScraperWiki,
 library, and some of these are passed on to the scraperwiki_local library,
-but the change shouldn't break much existing code. Here are two differences.
+but the change shouldn't break much existing code. To give you an idea of the
+ways they differ, here are two differences.
 
-#### Complex cell values
+### Complex cell values
 
 What happens if you do this?
 
@@ -43,7 +44,7 @@ In the local version, it is encoded to JSON, so it looks like this:
 And when you retrieve it, it comes back as a list rather than as a string.
 And if it can't be encoded to JSON, you get an error.
 
-#### Case-insensitive column names
+### Case-insensitive column names
 
 SQL is less sensitive to case than Python. The following code works fine
 in both versions of the library.
@@ -80,3 +81,17 @@ dictionaries. In the local version, `scraperwiki.sqlite.select` returns a list
 of [special dictionaries](https://github.com/tlevine/dicti) that have
 case-insensitive keys.
 
+## Develop locally
+
+Here's a start at developing ScraperWiki scripts locally, with whatever coding
+environment you are used to.
+
+For a lot of things, the local library will do the same thing as the hosted.
+For another lot of things, there will be differences and the differences won't matter.
+
+If you want to develop locally (just Python for now), you can use the local library
+and then move your script to a ScraperWiki script when you've finished developing it.
+Or you could just run it somewhere else.
+
+If you like developing locally, you might also want to take a look at
+[Thom Neale's ScraperWiki scraper](https://github.com/twneale/scraperwikiscraper).
